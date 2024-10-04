@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Product | Test 1</title>
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/addproduct.css">
+    <link rel="stylesheet" href="css/fonts.css">
+</head>
+<body>
+    <header id="headerbar">
+        <div class="title-bar">
+            <div class="head-left">
+                <!--<a href="test.html"> --><img src="assets/file.png" alt="logo" id="logo"></a>
+                <h1 class="company-title lato-bold">Something Little Special</h1>
+                <input type="text" name="searchbar" id="searchbar" placeholder="Search...">
+            </div>
+            <div class="head-right">
+                <button class="icon-button" onclick="window.location.href='h'"><img src="assets/wishlist.png" alt=""
+                        class="large-icon" title="View Wishlist"></button>
+                <button class="icon-button" onclick="window.location.href='h'"><img src="assets/shopping-cart.png"
+                        alt="" class="large-icon" title="View Cart"></button>
+                <div class="acc-dropdown">
+                    <button class="icon-button"><img src="assets/account.png" alt="" class="large-icon"></button>
+                    <div class="acc-dropdown-content">
+                        <button onclick="document.getElementById('cloginform').style.display='block'">Customer</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-container" id="cloginform">
+            <div class="center animate">
+                <div class="login-title">
+                    <h2>Login</h2>
+                </div>
+                <div class="formpage">
+                    <form action="" method="post" class="lato-regular">
+                        <div class="btn">
+                            <button type="submit" id="g-login"><img src="assets/google-icon.png" alt=""
+                                    id="google-logo">Continue with Google</button>
+                            <button type="button" onclick="closePopup()"
+                                class="cancelbtn">Cancel</button>
+                        </div>
+                    </form>
+                    <!-- <div class="signup-redirect lato-regular">New user? Click here to <a
+                            onclick="document.getElementById('csignupform').style.display='block'; document.getElementById('cloginform').style.display='none'"
+                            id="signup-anchor">sign up</a></div> -->
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="modal-container" id="csignupform">
+            <div class="center animate" id="csignupformpage">
+                <div class="signup-title">
+                    <h2>Customer Signup</h2>
+                </div>
+                <div class="formpage lato-regular">
+                    <form action="" onsubmit="return validateForm()" method="post">
+                        <div class="creds">
+                            <div class="signup-name">
+                                <div class="signup-col1">
+                                    <label for="fname">First Name</label>
+                                    <input class="signup-input" type="text" name="fname" id="fname">
+                                </div>
+                                <div class="signup-col2">
+                                    <label for="lname">Last Name</label>
+                                    <input class="signup-input" type="text" name="lname" id="lname">
+                                </div>
+                            </div>
+                            <div class="signup-dob">
+                                <label for="dob">Date of Birth</label>
+                                <input class="signup-input" type="date" name="dob" id="dob">
+                            </div>
+                            <div class="signup-contacts">
+                                <div class="signup-col1">
+                                    <label for="mobile">Mobile Number</label>
+                                    <input class="signup-input" type="tel" name="mobile" id="mobile">
+                                </div>
+                                <div class="signup-col2">
+                                    <label for="email">Email ID</label>
+                                    <input class="signup-input" type="email" name="email" id="email">
+                                </div>
+                            </div>
+                            <div class="signup-password">
+                                <label for="signup-password1">Enter a Password</label>
+                                <input class="signup-input" type="password" name="signup-password1" id="signup-password1">
+                                <label for="signup-password2">Confirm your Password</label>
+                                <input class="signup-input" type="password" name="signup-password2" id="signup-password2">
+                                <p id="password-match-message">Passwords do not match</p>
+                            </div>
+                        </div>
+                        
+                        <div class="btn">
+                            <button type="submit" id="c-signup">Generate OTP</button>
+                            <button type="button" onclick="document.getElementById('csignupform').style.display='none'"
+                            class="cancelbtn">Cancel</button>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div> -->
+    </header>
+
+    <!-- Empty Div to check working of Header script -->
+     <div class="empty-bar"></div>
+
+    <div class="container">
+        <div class="form-box lato-bold">
+            <div class="form-title-box"><h3 id="form-title">Add details about the product</h3></div>
+            <div class="form-page lato-regular">
+                <form action="/add-product" method="post" enctype="multipart/form-data">
+                    <div class="row">
+                        <div class="col1">
+                            <label for="product-name">Product Name:</label>
+                            <input type="text" name="product-name" id="product-name" required>
+                        </div>
+                        <div class="col2">
+                            <label for="product-category">Product Category:</label>
+                            <input type="text" name="product-category" id="product-category" required>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col1">
+                            <label for="product-price">Product Price</label>
+                            <input type="number" name="product-price" id="product-price" required>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col1">
+                            <label for="product-customization">Is the product customizable?</label>
+                            <label for="custom-yes">Yes</label>
+                            <input type="radio" name="product-customization" id="custom-yes" value="1" required>
+                            <label for="custom-no">No</label>
+                            <input type="radio" name="product-customization" id="custom-no" value="0">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col1">
+                            <label for="product-cover-image">Select Cover Image</label>
+                            <input type="file" name="product-cover-image" id="product-cover-image" required>
+                        </div>
+                        <div class="col2">
+                            <label for="product-secondary-img">Upload other Images here</label>
+                            <input type="file" name="secondary-img[]" multiple id="product-secondary-img" required>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col1">
+                            <label for="product-keyword">Add keywords (More related keywords help in optimized search)</label>
+                            <textarea name="product-keyword" id="product-keyword" rows="3" cols="40" required></textarea>
+                        </div>
+                        <div class="col2">
+                            <label for="product-description">Add Product Description</label>
+                            <textarea name="product-description" id="product-description" rows="6" cols="40" required></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="submit-btn-row">
+                        <button type="submit" id="product-submit">Add Product</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+
+    //Modal Script (Popup)
+window.onclick = function (event) {
+    var cloginModal = document.getElementById('cloginform');
+    var aloginModal = document.getElementById('aloginform');
+    var aloginModal = document.getElementById('csignupform');
+    if (event.target == cloginModal) {
+        cloginModal.style.display = "none";
+    } else if (event.target == aloginModal) {
+        aloginModal.style.display = "none";
+    }
+}
+
+// Function to show the popup only on the first visit in the current session
+window.onload = function() {
+    setTimeout(function() {
+        if (!sessionStorage.getItem('popupShown')) {
+            // Show the popup if it hasn't been shown in this session
+            document.getElementById("cloginform").style.display = "block";
+        }
+    }, 2000); // Delay of 2000 milliseconds (2 seconds)
+};
+
+// Function to close the popup
+function closePopup() {
+    document.getElementById("cloginform").style.display = "none";
+    // Set a flag in sessionStorage to prevent the popup from showing again in this session
+    sessionStorage.setItem('popupShown', 'true');
+}
+
+
+</script>
+</html>

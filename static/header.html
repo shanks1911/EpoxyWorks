@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header Template</title>
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/fonts.css">
+</head>
+<body>
+    <header id="headerbar">
+        <div class="title-bar">
+            <div class="head-left">
+                <!--<a href="test.html"> --><img src="assets/file.png" alt="logo" id="logo"></a>
+                <h1 class="company-title lato-bold">Something Little Special</h1>
+                <input type="text" name="searchbar" id="searchbar" placeholder="Search...">
+            </div>
+            <div class="head-right">
+                <button class="icon-button" onclick="window.location.href='h'"><img src="assets/wishlist.png" alt=""
+                        class="large-icon" title="View Wishlist"></button>
+                <button class="icon-button" onclick="window.location.href='h'"><img src="assets/shopping-cart.png"
+                        alt="" class="large-icon" title="View Cart"></button>
+                <div class="acc-dropdown">
+                    <button class="icon-button"><img src="assets/account.png" alt="" class="large-icon"></button>
+                    <div class="acc-dropdown-content">
+                        <button onclick="document.getElementById('cloginform').style.display='block'">Customer</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-container" id="cloginform">
+            <div class="center animate">
+                <div class="login-title">
+                    <h2>Login</h2>
+                </div>
+                <div class="formpage">
+                    <form action="" method="post" class="lato-regular">
+                        <div class="btn">
+                            <button type="submit" id="c-login"><img src="assets/google-icon.png" alt=""
+                                    id="google-logo">Continue with Google</button>
+                            <button type="button" onclick="closePopup()"
+                                class="cancelbtn">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+      
+    </header>
+
+    <!-- Empty Div to check working of Header script -->
+     <div class="empty-bar" style="width: 96vw; height: 2000px; border: 2px solid blue;"></div>
+
+</body>
+
+
+<script>
+        //Modal Script (Popup)
+        window.onclick = function (event) {
+        var cloginModal = document.getElementById('cloginform');
+        var aloginModal = document.getElementById('aloginform');
+        var aloginModal = document.getElementById('csignupform');
+        if (event.target == cloginModal) {
+            cloginModal.style.display = "none";
+        } else if (event.target == aloginModal) {
+            aloginModal.style.display = "none";
+        }
+    }
+
+        // Function to show the popup only on the first visit in the current session
+        window.onload = function() {
+            setTimeout(function() {
+        if (!sessionStorage.getItem('popupShown')) {
+            // Show the popup if it hasn't been shown in this session
+            document.getElementById("cloginform").style.display = "block";
+        }
+    }, 2000); // Delay of 2000 milliseconds (2 seconds)
+};
+
+        // Function to close the popup
+        function closePopup() {
+            document.getElementById("cloginform").style.display = "none";
+            // Set a flag in sessionStorage to prevent the popup from showing again in this session
+            sessionStorage.setItem('popupShown', 'true');
+        }
+
+</script>
+
+
+<script src="js/nav_scroll.js"></script>
+</html>

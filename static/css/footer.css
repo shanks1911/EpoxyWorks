@@ -1,0 +1,46 @@
+/* Footer Styles Start */
+
+footer {
+    border: 2px solid blue;
+    margin-top: 20px;
+    padding: 20px 12px;
+}
+
+.about {
+    display: flex;
+}
+
+.about-text {
+    text-align: justify;
+    padding: 0px 40px;
+}
+
+#about-title {
+    font-size: 2rem;
+}
+
+.about-image img {
+    width: 480px;
+    height: 270px;
+    border: 2px solid grey;
+}
+
+.socials {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    margin: 20px auto;
+}
+
+.socials-text {
+    font-size: 1.5rem;
+}
+
+.social-icon {
+    width: 32px;
+    margin: 0px 8px;
+}
+
+
+
+/* Footer Styles End */

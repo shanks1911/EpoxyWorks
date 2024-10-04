@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Epoxy Works | Test6 Home</title>
+    <link rel="stylesheet" href="css/ahome.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <!-- <link rel="stylesheet" href="css/clogin.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+
+<body>
+
+    <header id="headerbar">
+        <div class="title-bar">
+          <div class="head-left">
+            <img src="assets/file.png" alt="logo" id="logo">
+            <h1 class="company-title lato-bold">Something Little Special</h1>
+            <input type="text" name="searchbar" id="searchbar" placeholder="Search...">
+          </div>
+          <div class="head-right">
+            <button class="icon-button" onclick="window.location.href='h'"><img src="assets/wishlist.png" alt=""
+                class="large-icon" title="View Wishlist"></button>
+            <button class="icon-button" onclick="window.location.href='h'"><img src="assets/shopping-cart.png" alt=""
+                class="large-icon" title="View Cart"></button>
+      
+            <% if (isAuthenticated) { %>
+              <!-- Header after login -->
+              <div class="acc-dropdown">
+                <button class="icon-button"><img src="assets/account.png" alt="" class="large-icon" onclick="window.location.href='/profile'"></button>
+              </div>            
+            <% } else { %>
+              <!-- Header before login -->
+              <div class="acc-dropdown">
+                    <button class="icon-button"><img src="assets/account.png" alt="" class="large-icon"></button>
+                    <div class="acc-dropdown-content">
+                        <button onclick="document.getElementById('cloginform').style.display='block'">Customer</button>
+                    </div>
+                </div>
+            <% } %>
+          </div>
+        </div>
+      
+        <!-- Login Modal -->
+        <% if (!isAuthenticated) { %>
+            <div class="modal-container" id="cloginform">
+                <div class="center animate">
+                    <div class="login-title">
+                        <h2>Login</h2>
+                    </div>
+                    <div class="formpage">
+                        <div   class="lato-regular">
+                            <div class="btn">
+                                <button id="c-login"><img src="assets/google-icon.png" alt=""
+                                        id="google-logo">Continue with Google</button>
+                                <button type="button" onclick="closePopup()"
+                                    class="cancelbtn">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <% } %>
+      </header>
+
+    <div class="empty-bar"></div>       <!-- This needs to be removed by adjusting vertical margins of below elements -->
+
+    <div class="carousel">
+        <div class="mySlides fade">
+            <img src="assets/carousel/carousel1.webp" id="carousel1" alt="">
+        </div>
+        <div class="mySlides fade">
+            <img src="assets/carousel/carousel2.webp" id="carousel2" alt="">
+        </div>
+        <div class="mySlides fade">
+            <img src="assets/carousel/carousel3.webp" id="carousel3" alt="">
+        </div>
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+
+    <div class="category-box">
+        <h2 id="category-title">Explore Various Categories</h2>
+        <div class="category-row">
+            <div class="category-card">
+                <img src="assets/flower_preservation.jpg" alt="" class="category-image">
+                <div class="category-details">
+                    <h5 class="category-title">Flower Preservations</h5>
+                    <h6 class="category-desc">Preserve your precious memories with our exquisite flower preservation
+                        gifts. Capture the beauty of your special moments forever in stunning, handcrafted keepsakes
+                        that will keep your flowers vibrant and cherished.
+                    </h6>
+                </div>
+            </div>
+            <div class="category-card">
+                <img src="assets/frames_and_keychains.jpg" alt="" class="category-image">
+                <div class="category-details">
+                    <h5 class="category-title">Frames and Keychains</h5>
+                    <h6 class="category-desc">Celebrate life's beautiful moments with our charming photo frames and
+                        keychains. From inspiring quotes to delightful magnet frames, these personalized treasures are
+                        perfect for adding a touch of magic to your everyday life.
+                    </h6>
+                </div>
+            </div>
+            <div class="category-card">
+                <img src="assets/jewellery.jpg" alt="" class="category-image">
+                <div class="category-details">
+                    <h5 class="category-title">Jewellery</h5>
+                    <h6 class="category-desc">Adorn yourself with our captivating jewellery collection! Discover elegant
+                        pendants, chic bracelets, and dazzling earrings that will make you shine and sparkle. Perfect
+                        gifts for adding a touch of glamour to any outfit.
+                    </h6>
+                </div>
+            </div>
+        </div>
+
+        <div class="category-row">
+            <div class="category-card">
+                <img src="assets/corporate_gifts.jpg" alt="" class="category-image">
+                <div class="category-details">
+                    <h5 class="category-title">Corporate/Return Gifts</h5>
+                    <h6 class="category-desc">mpress and delight with our sophisticated corporate and return gifts.
+                        Perfect for any occasion, these elegant and thoughtful presents will leave a lasting impression
+                        on clients, colleagues, and guests alike.
+                    </h6>
+                </div>
+            </div>
+            <div class="category-card">
+                <img src="assets/art_and_decor.jpg" alt="" class="category-image">
+                <div class="category-details">
+                    <h5 class="category-title">Art and Decor</h5>
+                    <h6 class="category-desc">Transform your space with our stunning art and decor pieces! From
+                        personalized nameplates to breathtaking paintings, candle stands, lamps, and wall clocks, our
+                        collection will add a unique touch to your home or office.
+                    </h6>
+                </div>
+            </div>
+            <div class="category-card">
+                <img src="assets/functional_gifts.jpg" alt="" class="category-image">
+                <div class="category-details">
+                    <h5 class="category-title">Functional Gifts</h5>
+                    <h6 class="category-desc">Combine style and functionality with our amazing functional gifts! Explore
+                        our range of bookmarks, coasters, trays, and traditional gifts that are not only practical but
+                        also beautifully crafted to enhance your daily life.
+                    </h6>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="products">
+        <div class="product-titlebar">
+            <h2 class="product-titlebar-content lato-regular">Best Selling Products</h2>
+        </div>
+        <div class="product-card-row">
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="assets/product.jpg">
+                </div>
+                <div class="product-details lato-regular">
+                    <div class="product-name">
+                        <h3>Photo Frame</h3>
+                    </div>
+                    <div class="product-price">
+                        ₹ 0000.00
+                    </div>
+                    <div class="product-des">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    </div>
+                    <button class="product-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="assets/product.jpg">
+                </div>
+                <div class="product-details lato-regular">
+                    <div class="product-name">
+                        <h3>Photo Frame</h3>
+                    </div>
+                    <div class="product-price">
+                        ₹ 0000.00
+                    </div>
+                    <div class="product-des">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    </div>
+                </div>
+                <button class="product-cart-btn">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="assets/product.jpg">
+                </div>
+                <div class="product-details lato-regular">
+                    <div class="product-name">
+                        <h3>Photo Frame</h3>
+                    </div>
+                    <div class="product-price">
+                        ₹ 0000.00
+                    </div>
+                    <div class="product-des">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    </div>
+                </div>
+                <button class="product-cart-btn">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="assets/product.jpg">
+                </div>
+                <div class="product-details lato-regular">
+                    <div class="product-name">
+                        <h3>Photo Frame</h3>
+                    </div>
+                    <div class="product-price">
+                        ₹ 0000.00
+                    </div>
+                    <div class="product-des">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    </div>
+                </div>
+                <button class="product-cart-btn">Add to Cart</button>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="extra-det-box">
+        <div class="extra-det-row">
+            <div class="extra-det-image">
+                <img src="assets/customize.jpg" alt="">
+            </div>
+            <div class="extra-det-text lato-regular">
+                <div class="extra-det-title">
+                    <h2>Customize your Products</h2>
+                </div>
+                <div class="extra-det-des">
+                    <p class="customization-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque
+                        quis, nesciunt fugit debitis laboriosam corporis iusto nulla, numquam, porro vitae amet qui?
+                        Reiciendis asperiores impedit alias, quas incidunt maxime unde qui distinctio delectus optio
+                        velit id? Esse mollitia ipsum suscipit laborum earum repellendus ad quod doloribus, rem est.
+                        Eveniet vitae ut nostrum animi? Architecto dolor quia fuga earum nemo assumenda alias quidem
+                        voluptates deserunt est, iure reiciendis odit perferendis corrupti error nisi aliquid, iusto hic
+                        autem quaerat vitae, minima veniam similique. Harum ea nihil et aperiam repellat iure cum libero
+                        esse minima ipsum. Nobis dolore, similique aliquam deleniti dolor repellat.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="extra-det-row">
+            <div class="extra-det-text lato-regular">
+                <div class="extra-det-title">
+                    <h2>Explore our Workshops</h2>
+                </div>
+                <div class="extra-det-des">
+                    <p class="customization-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque
+                        quis, nesciunt fugit debitis laboriosam corporis iusto nulla, numquam, porro vitae amet qui?
+                        Reiciendis asperiores impedit alias, quas incidunt maxime unde qui distinctio delectus optio
+                        velit id? Esse mollitia ipsum suscipit laborum earum repellendus ad quod doloribus, rem est.
+                        Eveniet vitae ut nostrum animi? Architecto dolor quia fuga earum nemo assumenda alias quidem
+                        voluptates deserunt est, iure reiciendis odit perferendis corrupti error nisi aliquid, iusto hic
+                        autem quaerat vitae, minima veniam similique. Harum ea nihil et aperiam repellat iure cum libero
+                        esse minima ipsum. Nobis dolore, similique aliquam deleniti dolor repellat.</p>
+                </div>
+            </div>
+            <div class="extra-det-image">
+                <img src="assets/customize.jpg" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="testimonial-box">
+        <div class="testimonial-card">
+            <div class="testimonial-icon"></div>
+            <div class="testimonial-user">User-1</div>
+            <div class="testimonial-comment">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque error
+                quibusdam libero pariatur exercitationem assumenda. Dolores numquam, corrupti adipisci illum ab
+                voluptatibus commodi veniam! Dolorum, soluta? Dolorum doloremque sit eius suscipit animi hic eos magni
+                adipisci ullam delectus. Doloribus, quo.</div>
+        </div>
+        <div class="testimonial-card">
+            <div class="testimonial-icon"></div>
+            <div class="testimonial-user">User-1</div>
+            <div class="testimonial-comment">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque error
+                quibusdam libero pariatur exercitationem assumenda. Dolores numquam, corrupti adipisci illum ab
+                voluptatibus commodi veniam! Dolorum, soluta? Dolorum doloremque sit eius suscipit animi hic eos magni
+                adipisci ullam delectus. Doloribus, quo.</div>
+        </div>
+        <div class="testimonial-card">
+            <div class="testimonial-icon"></div>
+            <div class="testimonial-user">User-1</div>
+            <div class="testimonial-comment">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque error
+                quibusdam libero pariatur exercitationem assumenda. Dolores numquam, corrupti adipisci illum ab
+                voluptatibus commodi veniam! Dolorum, soluta? Dolorum doloremque sit eius suscipit animi hic eos magni
+                adipisci ullam delectus. Doloribus, quo.</div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="about">
+            <div class="about-text">
+                <h3 id="about-title">About Me</h3>
+                <p class="about-para">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Id libero possimus aspernatur? Quisquam
+                    quia
+                    minima vero laudantium quaerat deleniti totam, quas reprehenderit ullam consectetur repellat,
+                    repellendus voluptatem sint dolores accusamus! Corrupti placeat dolorem aliquid, esse ullam
+                    voluptatibus
+                    doloribus vero provident dolore assumenda ratione quidem error facere possimus a repudiandae veniam
+                    fugit dolores id, quaerat, iste enim asperiores ab! Quis nam fuga cupiditate exercitationem tempora
+                    saepe dolor repellendus aperiam quisquam autem! Quis officia iure perferendis deleniti.
+                </p>
+            </div>
+            <div class="about-image"><img src="" alt=""></div>
+        </div>
+        <div class="socials">
+            <span class="socials-text">Follow me on:</span>
+            <a href="https://www.instagram.com/" target="_blank"><img src="assets/instagram.png" alt=""
+                    class="social-icon"></a>
+            <a href="mialto:s.alane@somaiya.edu" target="_blank"><img src="assets/mail.png" alt=""
+                    class="social-icon"></a>
+            <a href="https://www.facebook.com/" target="_blank"><img src="assets/facebook.png" alt=""
+                    class="social-icon"></a>
+            <a href="https://www.youtube.com/" target="_blank"><img src="assets/youtube.png" alt=""
+                    class="social-icon"></a>
+        </div>
+    </footer>
+
+</body>
+
+<script>
+
+    //Modal Script (Popup)
+    window.onclick = function (event) {
+        var cloginModal = document.getElementById('cloginform');
+        var aloginModal = document.getElementById('aloginform');
+        var aloginModal = document.getElementById('csignupform');
+        if (event.target == cloginModal) {
+            cloginModal.style.display = "none";
+        } else if (event.target == aloginModal) {
+            aloginModal.style.display = "none";
+        }
+    }
+
+
+    //Signup Password Validation script
+    function validateForm() {
+            var password1 = document.getElementById("signup-password1").value;
+            var password2 = document.getElementById("signup-password2").value;
+
+            if (password1 !== password2) {
+                // Passwords do not match, show error message
+                document.getElementById("password-match-message").style.display = "block";
+                return false; // Prevent form submission
+            } else {
+                // Passwords match, hide error message
+                document.getElementById("password-match-message").style.display = "none";
+                return true; // Allow form submission
+            }
+        }
+
+
+    var prevScrollpos = window.pageYOffset;
+    var header = document.getElementById("headerbar");
+    var headerHeight = header.offsetHeight;
+    window.onscroll = function() {
+    var currentScrollPos = window.pageYOffset;
+    if (prevScrollpos > currentScrollPos) {
+        document.getElementById("headerbar").style.top = "0";
+    } else {
+        document.getElementById("headerbar").style.top = `${6-headerHeight}px`;
+    }
+    prevScrollpos = currentScrollPos;
+    }
+
+    console.log(headerHeight)
+
+
+// Carousel Script
+// Auto Carousel Script
+
+let slideIndex = 0;
+showSlides();
+
+//Navigation through slides need to be debugged
+// function plusSlides(n) {
+//   showSlides(slideIndex += n);
+// }
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}
+  slides[slideIndex-1].style.display = "block";
+  setTimeout(showSlides, 3000); // Change image every 10 seconds
+}
+
+// Function for Onload Login Popup
+window.onload = function() {
+    setTimeout(function() {
+        if (!sessionStorage.getItem('popupShown')) {
+            // Show the popup if it hasn't been shown in this session
+            document.getElementById("cloginform").style.display = "block";
+        }
+    }, 2000); // Delay of 2000 milliseconds (2 seconds)
+};
+
+// Function to close the popup
+function closePopup() {
+    document.getElementById("cloginform").style.display = "none";
+    // Set a flag in sessionStorage to prevent the popup from showing again in this session
+    sessionStorage.setItem('popupShown', 'true');
+}
+
+</script>
+
+</html>

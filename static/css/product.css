@@ -1,0 +1,260 @@
+/* Container Styles Start */
+
+.container {
+    width: 96vw;
+    margin: 2vh auto 8vh auto;
+    /* border: 2px solid red; */
+    display: flex;
+    height: 80vh;
+}
+
+/* Gallery Styles Start */
+
+.gallery {
+    width: 36%;
+    height: auto;
+    /* border: 2px solid black; */
+    margin: auto;
+    position: relative;
+    padding: 20px;
+}
+
+.slides {
+    margin: auto;
+    /* display: none; */
+    width: 75%;
+    position: relative;
+}
+    
+.slide-image {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.thumbnail-row {
+    width: 75%;
+    margin: auto;
+    display: flex;
+}
+
+.thumbnail-col {
+    width: 20%;
+    display: block;
+    /* border: 2px solid green; */
+}
+
+.thumbnail-image {
+    width: 92%;
+    /* border: 2px solid aqua; */
+    display: block;
+    margin: auto;
+    border-radius: 8px;
+    opacity: 0.6;
+    border: 2px solid transparent;
+}
+
+.thumbnail-image:hover, .active-slide {
+    opacity: 1;
+    border: 2px solid red;
+    transition: transform 0.3s;
+}
+
+/* Gallery Styles End */
+
+/* Product Details Styles Start */
+
+.product-details {
+    width: 56%;
+    height: auto;
+    /* border: 2px solid blue; */
+    margin: auto auto;
+}
+
+/* Title Row Styles Start */
+
+.title-icon-row {
+    display: flex;
+}
+
+.title-icon-row-right, .title-icon-row-left {
+    display: flex;
+    /* height: auto; */
+    align-items: center;
+    /* border: 2px solid red; */
+}
+
+.title-icon-row-right {
+    margin-left: auto;
+    /* margin-right: 25px; */
+}
+
+#share-icon, #wishlist-icon {
+    width: 100%;
+}
+
+/* Title Row Styles End */
+
+.horizontal-rule{
+    height: 2px;
+    background-color: black;
+}
+
+/* Ratings Row Styles Start */
+
+.rating-row {
+    display: flex;
+}
+
+.rating-bar {
+    display: flex;
+}
+
+.rating-img {
+    width: 24px;
+}
+
+.rating-list {
+    display: flex;
+}
+
+.rating-count {
+    padding: 2px 8px;
+}
+
+/* Ratings Row Styles End */
+
+/* Product Price Box Styles Start */
+
+#product-price {
+    /* display: block; */
+    margin: 4px 16px;
+
+}
+
+/* Product Price Box Styles End */
+
+/* In PageTabs Styles Start */
+
+.tab-button-row {
+    display: flex;
+}
+
+.tab-button {
+    width: 33.33%;
+    padding: 12px 12px;
+    text-align: center;
+    border: 2px solid transparent;
+    background-color: #dddddd;
+}
+
+#tab1-button {
+    border-radius: 8px 0px 0px 0px;
+}
+
+#tab3-button {
+    border-radius: 0px 8px 0px 0px;
+}
+
+
+.tab-button:hover {
+    background-color: #aaaaaa;
+}
+
+.active-tab-button {
+    border-bottom: 2px solid red;
+}
+
+.tab-content {
+    display: none;
+    padding: 6px 12px;
+    border: 2px solid #ddd;
+    border-top: none;
+    border-radius: 0px 0px 8px 8px;
+}
+
+/* In PageTabs Styles End */
+
+/* Pincode Row Styles Start */
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+.pincode-row {
+    display: flex;
+}
+
+#pincode-field {
+    padding: 8px 8px;
+    font-size: 1.25em;
+    margin: 8px 12px;
+}
+
+#pincode-button {
+    background-color: #ff427f;
+    color: #ffffff;
+    border: 2px solid #ff0050;
+    border-radius: 8px;
+    padding: 8px 8px;
+    margin: 8px 0px;
+    font-size: 1em;
+    transition: 0.5s;
+    align-items: center;
+    display: flex;
+}
+
+#pincode-button:hover {
+    color: #ffffff;
+    background-color: #ff0050;
+    border: 2px solid #ff427f;
+}
+
+#location-icon {
+    height: 1.25em;
+}
+
+/* Pincode Row Styles End */
+
+/* Order Button Row Styles Start */
+
+.order-button-row {
+    display: flex;
+    margin: 8px 0px;
+}
+
+#personalize-btn, #shopping-cart-btn {
+    padding: 16px 64px;
+    margin: 4px 12px;
+    border-radius: 12px;
+    font-size: 1.5em;
+    display: flex;
+}
+
+#shopping-cart-btn {
+    background-color: #ff427f;
+    color: #ffffff;
+    border: 2px solid #ff0050;
+}
+
+#shopping-cart-btn:hover {
+    color: #ffffff;
+    background-color: #ff0050;
+    border: 2px solid #ff427f;
+}
+
+#personalize-icon, #shopping-cart-icon {
+    height: 1.25em;
+}
+
+/* Order Button Row Styles End */
+
+/* Product Details Styles End */
+
+/* Container Styles End */

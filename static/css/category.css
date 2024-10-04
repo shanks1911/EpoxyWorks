@@ -1,0 +1,306 @@
+body {
+    margin: 0px 0px;
+    padding: 0px 0px;
+}
+
+
+
+.container {
+    display: flex;
+    width: 98vw;
+    margin: auto;
+    /* border: 2px solid red; */
+}
+
+/* Sidebar Styles Start */
+
+.filters-sidebar {
+    width: 16%;
+    height: calc(100vh - 72px);      /* Is this good way? */
+    border: 2px solid black;
+    display: block;
+    padding: 8px 4px;
+
+    position: fixed;
+}
+
+.sort-options > button {
+    width: 100%;
+    background: none;
+    border: none;
+    cursor: default;
+    height: 24px;
+    text-align: left;
+}
+
+.sort-options-buttons {
+    width: 90%;
+    margin: auto;
+}
+
+.sort-options-buttons button {
+    display: block;
+    width: 100%;
+    height: 32px;
+}
+
+
+.price-filters {
+    display: flex;
+    margin: 20px 0px;
+}
+
+.min-price-filters, .max-price-filters {
+    width: 50%;
+    text-align: center;
+}
+
+#min-price-field, #max-price-field {
+    width: 75%;
+    min-width: 40px;
+    margin: 4px 0;
+    padding: 4px 8px;
+}
+
+input[type="number"]::-webkit-outer-spin-button, 
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+} 
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+.customization-filters {
+    margin: 8px 0px;
+}
+
+.rating-filters {
+    margin: 8px 0px;
+}
+
+.rating-options label{
+    display: block;
+    margin: 4px 8px;
+}
+
+.material-filters {
+    margin: 8px 0px;
+}
+
+.material-options label{
+    display: block;
+    margin: 4px 8px;
+}
+
+.filter-buttons {
+    display: flex;
+}
+
+.filter-buttons button{
+    display: block;
+    height: 24px;
+    width: 45%;
+    margin: 8px auto;
+}
+
+/* GPT styles for Sidebar Start */
+
+
+/*
+.filters-sidebar {
+    top: 0;
+    left: 0;
+    background-color: #333;
+    padding: 20px 15px;
+    overflow-y: auto;
+    transition: 0.3s ease;
+    z-index: 1000;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+    color: #fff;
+}
+
+.closebtn {
+    font-size: 36px;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.sort-options, 
+.price-filters, 
+.customization-filters, 
+.rating-filters, 
+.material-filters {
+    margin-bottom: 20px;
+}
+
+.sort-options-buttons button, 
+.filter-buttons button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #444;
+    color: #fff;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+}
+
+.sort-options-buttons button:hover, 
+.filter-buttons button:hover {
+    background-color: #555;
+}
+
+.price-filters input {
+    width: 80%;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 5px;
+    background-color: #444;
+    color: #fff;
+}
+
+.customization-options label, 
+.rating-options label, 
+.material-options label {
+    display: block;
+    margin-top: 10px;
+}
+
+.customization-options input, 
+.rating-options input, 
+.material-options input {
+    margin-right: 10px;
+}
+
+label {
+    font-size: 14px;
+    color: #ddd;
+}
+
+.filter-buttons button {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.filter-buttons button[type="reset"] {
+    background-color: #f44336;
+}
+
+.filter-buttons button:hover {
+    opacity: 0.9;
+}
+
+@media screen and (max-width: 600px) {
+    .filters-sidebar {
+        width: 100%;
+        position: relative;
+        height: auto;
+    }
+
+    .closebtn {
+        position: relative;
+        float: right;
+        margin: 10px;
+    }
+
+    .sort-options-buttons button, 
+    .filter-buttons button {
+        width: 95%;
+    }
+}
+*/
+
+/* GPT styles for Sidebar End */
+
+/* Sidebar Styles End */
+
+/* product-Box Styles Start */
+
+.product-box {
+    width: 100%;
+    display: block;
+    margin-left: 16%;
+}
+
+.product-row {
+    display: flex;
+    width: 96%;
+    height: auto;
+    border: 2px solid green;
+    margin: auto;
+    justify-content: space-evenly;
+}
+
+.product-card {
+    border: 4px solid transparent;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 2vh 0;
+    
+    transition: 500ms;
+    background-color: #f0f0f0;
+}
+
+.product-card:hover {
+    transition: 2s;
+    border: 4px solid rgb(0, 255, 0);
+}
+
+.product-images {
+    position: relative;
+    display: block;
+}
+
+.fav-icon-div {
+    position: absolute;
+    top:0;
+    right:0;
+    width: 25%;
+    background: linear-gradient(45deg, rgb(134, 134, 134), rgba(111, 75, 75, 0.8));
+    border-radius: 0px 0px 0px 16px;
+    display: flex;
+}
+
+.fav-icon-div img {
+    width: 40px;
+    height: auto;
+    margin: auto;
+}
+
+.product-info {
+    margin: 4px 8%;
+    border: 2px solid red;
+}
+
+.product-name {
+    margin: 4px 8px;
+}
+
+.product-desc-row {
+    margin: 0px;
+}
+
+.product-price, .product-rating {
+    margin: 4px 8px;
+}
+
+.product-customization-row {
+    display: flex;
+    align-items: center;
+    padding: 8px 8px;
+}
+
+.custom-icon-box {
+    display: flex;
+}
+
+
+
+/* product-Box Styles End */

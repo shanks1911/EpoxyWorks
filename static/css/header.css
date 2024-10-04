@@ -1,0 +1,324 @@
+body {
+    margin: 0px 0px;
+    padding: 0px 0px;
+}
+
+/*Header Styles Start*/
+
+header {
+    background: linear-gradient(180deg, #ffd490, #f8dcb6);
+    display: block;
+    height: auto;
+    position: fixed;
+    width: 100%;
+    height: auto;
+    align-items: center;
+    transition: 500ms;
+    z-index: 999;
+    margin: 0px 0px;
+    padding: 6px 0px;
+
+}
+
+.title-bar {
+    display: flex;
+}
+
+.head-left,
+.head-right {
+    display: flex;
+    align-items: center;
+}
+
+.head-right {
+    margin-left: auto;
+    margin-right: 25px;
+}
+
+#logo {
+    width: 48px;
+    height: auto;
+    border-radius: 40px;
+    margin: 0px 10px;
+}
+
+.company-title {
+    display: inline-block;
+    margin: 0px 50px;
+    color: #f92c63;
+    font-size: 24px;
+}
+
+#searchbar {
+    width: 300px;
+    font-size: 2vh;
+    padding: 8px 8px;
+    margin-right: 2vw;
+    border-radius: 8px;
+    transition: 500ms;
+    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    background-color: #f4f4f4;
+    border: 4px solid transparent;
+    transition: 0ms;
+}
+
+#searchbar:focus {
+    /* width: 600px; */
+    background-color: #ffffff;
+    border: 4px solid #ffb088;
+
+}
+
+.icon-button {
+    background: none;
+    border: none;
+    transition: 100ms;
+    padding: 0px 4px;
+    margin: 0px 4px;
+}
+
+/* .icon-button:hover {
+    zoom: 102.5%;
+} */
+
+.large-icon {
+    font-size: 48px !important;
+    /* margin: 0px 0.75vw; */
+    cursor: default;
+    height: 36px;
+}
+
+.acc-dropdown {
+    display: inline-block;
+}
+
+.acc-dropdown-content {
+    display: none;
+    position: absolute;
+    right: 2px;
+    border: 1px solid #f92c63;
+    /* background-color: yellow; */
+
+
+    button {
+        display: block;
+        min-width: 75px;
+        width: 150px;
+        height: 40px;
+        color: black;
+        text-decoration: none;
+        background-color: #ffb798;
+        border: 3px solid transparent;
+        /* border-radius: 2px; */
+        /* margin: 0px 2px; */
+    }
+
+    button:hover {
+        background-color: #ff8a59;
+        color: rgb(65, 65, 65);
+        /* border-color: black; */
+        /* border-bottom: 3px solid #ffb088; */
+    }
+}
+
+.acc-dropdown:hover {
+    .acc-dropdown-content {
+        display: block;
+    }
+}
+
+.empty-bar {
+    height: 60px;
+    width: 100%;
+    display: block;
+}
+
+/*Modal Form Styles Start*/
+
+.modal-container {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    /* background-color: rgb(0, 0, 0); */
+    background-color: rgba(0, 0, 0, 0.75);
+    padding-top: 60px;
+}
+
+.center {
+    width: 22.5vw;
+    min-width: 300px;
+    height: auto;
+    margin: auto;
+    margin-top: 15vh;
+    margin-bottom: 2.5vh;
+    background-color: #ffffff;
+    border-radius: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 2px solid black;
+}
+
+#csignupformpage {
+    margin-top: 2.5vh;
+    width: 30vw;
+}
+
+.formpage {
+    width: 75%;
+    margin: auto;
+}
+
+.login-title,
+.signup-title {
+    text-align: center;
+    border-bottom: 2px solid black;
+}
+
+.creds {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 1.75vh;
+}
+
+.login-input,
+.signup-input,
+.admin-input {
+    font-size: 1.75vh;
+    font-weight: lighter;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background: transparent;
+    padding-left: 5px;
+    width: 100%;
+    margin-top: 2.5px;
+    margin-bottom: 7.5px;
+    padding: 5px 10px;
+}
+
+.btn {
+    min-width: 100px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    align-items: center;
+}
+
+#c-login,
+#g-login,
+#a-login,
+#c-signup,
+#clearsignup {
+    font-style: normal;
+    font-size: 2vh;
+    width: 100%;
+    min-width: fit-content;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #ffffff;
+    border-radius: 25px;
+    transition: 200ms;
+    border: 2px solid black;
+    margin: 10px 0px;
+}
+
+#c-login:hover,
+#g-login:hover,
+#a-login:hover,
+#c-signup:hover,
+#clearsignup:hover {
+    border: 2px solid #555555;
+    background-color: #000000;
+    color: #ffffff;
+}
+
+#google-logo {
+    width: 15px;
+    height: auto;
+    margin: 0px 5px;
+}
+
+.cancelbtn {
+    font-style: normal;
+    font-size: 2vh;
+    width: 100%;
+    min-width: fit-content;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #f44336;
+    border-radius: 25px;
+    transition: 200ms;
+    border: 2px solid black;
+    margin: 10px 0px;
+}
+
+.cancelbtn:hover {
+    opacity: 0.8;
+}
+
+.signup-redirect {
+    width: 100%;
+    margin: auto;
+    margin-top: 15px;
+    text-align: center;
+    font-weight: lighter;
+    font-style: normal;
+    margin-bottom: 10px;
+    font-size: 2vh;
+}
+
+#signup-anchor {
+    color: blue;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+a:visited {
+    color: blue;
+}
+
+#password-match-message {
+    font-size: 1.5vh;
+    margin: 0px 0px 0px 0px;
+    color: red;
+    display: none;
+}
+
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {
+        -webkit-transform: scale(0)
+    }
+
+    to {
+        -webkit-transform: scale(1)
+    }
+}
+
+@keyframes animatezoom {
+    from {
+        transform: scale(0)
+    }
+
+    to {
+        transform: scale(1)
+    }
+}
+
+/*Modal Form Styles End*/
+
+/*Header Styles End*/

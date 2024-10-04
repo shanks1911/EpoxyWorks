@@ -1,0 +1,328 @@
+body {
+    margin: 0px 0px;
+    padding: 0px 0px;
+}
+
+
+
+.item-count-row hr {
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    /* position: relative; */
+}
+
+/* Order List Table Styles Start */
+
+.order-list-row {
+    width: 80vw;
+    /* height: calc(100vh - 66px - 4vh - 8px - 32px);  */
+    display: block;
+    border: 2px solid rgb(0, 9, 92);
+    border-radius: 32px;
+    margin: 20px 8px;
+}
+
+.item-count-row {
+    height: 4vh;
+    width: 96%;
+    font-size: 1.5rem;
+    padding: 16px 16px;
+    margin: 4px auto;
+    border-bottom: 2px solid rgb(0, 0, 0);
+    display: block;
+}
+
+.order-item-card {
+    display: flex;
+    border: 2px solid #7a7a7a;
+    border-radius: 16px;
+    margin: 40px 12px;
+}
+
+.item-image {
+    width: 20%;
+    /* height: 200px; */
+    display: flex;
+    align-items: center;
+    /* border: 2px solid aqua; */
+}
+
+.item-image img {
+    /* width: 150px; */
+    width: 80%;
+    height: auto;
+    display: block;
+    margin: auto;
+    border-radius: 16px;
+}
+
+.item-description {
+    width: 65%;
+    /* border: 2px solid yellow; */
+    padding: 12px 20px;
+}
+
+.item-name {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #5a5a5a;
+    margin: 8px 0px;
+}
+
+.rate-details {
+    display: flex;
+    margin: 4px 0px;
+}
+
+.rate-details * {
+    margin-right: 40px;
+}
+
+.custom-details {
+    text-align: justify;
+    font-size: 1rem;
+    margin: 4px 0px;
+}
+
+.custom-options {
+    font-style: italic;
+    color: #6e6e6e;
+}
+
+.custom-instruction {
+    font-size: 0.9rem;
+}
+
+.item-quantity {
+    display: flex;
+    margin: 16px auto;
+}
+
+.item-quantity-control {
+    display: flex;
+    /* position: relative; */
+    height: min(3rem, 45px);
+}
+
+.quantity-control-field, .quantity-control {
+    padding: 8px 16px;
+    font-size: 20px;
+}
+
+.quantity-control-field {
+    width: 36px;
+    text-align: center;
+}
+
+input[type="number"]::-webkit-outer-spin-button, 
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+} 
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+.quantity-control {
+    border: 1px solid black;
+}
+
+.quantity-minus {
+    border-radius: 8px 0px 0px 8px;
+        border: 1px solid black;
+}
+
+.quantity-plus {
+    border-radius: 0px 8px 8px 0px;
+        border: 1px solid black;
+}
+
+.quantity-control-field {
+    border-left: none;
+    border-right: none;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    text-align: center;
+    outline: none;
+}
+
+.item-remove button {
+    width: fit-content;
+    height: min(3rem, 45px);
+    margin: 0px 40px;
+    border-radius: 8px;
+    /* outline: none; */
+}
+
+.remove-item-button img {
+    width: 80%;
+    height: 80%;
+}
+
+.item-price {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ff8800;
+    margin: auto auto;
+    
+}
+
+/* Order List Table Styles End */
+
+/* Order Summary Box Styles Start */
+
+.order-summary-box {
+    width: 18vw;
+    height: calc(100vh - 60px);
+    /* display: block; */
+    /* border: 2px solid red; */
+    background: #eeeeee;
+    position: fixed;
+    right: 0;
+}
+
+.summary-title-box {
+    display: block;
+    width: 100%;
+    border-bottom: 2px solid black;
+}
+
+.summary-title-box p {
+    font-size: 1.75rem;
+    text-align: center;
+    margin: 16px 0px;
+}
+
+.price-summary {
+    width: 96%;
+    height: auto;
+    margin: auto;
+}
+
+.price-entry {
+    display: flex;
+    margin: 8px 0px;
+}
+
+.price-entry label {
+    width: 60%;
+    /* font-size: 0.9rem; */
+    margin: auto;
+}
+
+.price-entry input {
+    width: 20%;
+    margin: auto;
+    font-size: 1rem;
+    outline: none;
+    border: none;
+    background: none;
+    text-align: right;
+    cursor: default;
+}
+
+.total-price-entry {
+    display: flex;
+    margin: 16px 0px;
+    padding: 8px 0px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    font-size: 1.2rem;
+}
+
+.total-price-entry label {
+    width: 60%;
+    font-size: 1.25rem;
+    margin: auto;
+} 
+
+.total-price-entry input {
+    width: 20%;
+    margin: auto;
+    font-size: 1.25rem;
+    outline: none;
+    border: none;
+    background: none;
+    text-align: right;
+    cursor: default;
+}
+
+.address-field label {
+    display: block;
+    width: 60%;
+    margin: 8px 16px;
+}
+
+#shipping-address-field {
+    width: 80%;
+    display: block;
+    margin: 4px 16px;
+    resize: none;
+    padding: 8px 8px;
+    font-size: 1rem;
+}
+
+.cart-button {
+    position: absolute;
+    bottom: 0;
+    margin: 16px auto;
+    width: 100%;
+}
+
+#checkout-button {
+    width: 96%;
+    display: flex;
+    margin: 0px auto;
+    padding: 12px 0px;
+    font-size: 1.2rem;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+
+#checkout-button img {
+    height: 1.2rem;
+    width: auto;
+    margin: 0px 8px;
+}
+
+/* Order Summary Box Styles End */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Approach 2 - container's position is relative, summary-box positon is absolute */
+
+
+/* Approach to change rem for different media
+
+html {
+    font-size: 16px;
+}
+
+div {
+    width: 10rem;
+}
+
+@media (max-width: 600px) {
+    html {
+        font-size: 12px;
+    }
+}
+
+
+*/

@@ -1,0 +1,296 @@
+<!-- To Implement Tabs -->
+<!-- And Implement Cart BUttons -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page | Test4</title>
+    <link rel="stylesheet" href="css/product.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/fonts.css">
+</head>
+<body>
+
+    <header id="headerbar">
+        <div class="title-bar">
+          <div class="head-left">
+            <img src="assets/file.png" alt="logo" id="logo">
+            <h1 class="company-title lato-bold">Something Little Special</h1>
+            <input type="text" name="searchbar" id="searchbar" placeholder="Search...">
+          </div>
+          <div class="head-right">
+            <button class="icon-button" onclick="window.location.href='h'"><img src="assets/wishlist.png" alt=""
+                class="large-icon" title="View Wishlist"></button>
+            <button class="icon-button" onclick="window.location.href='h'"><img src="assets/shopping-cart.png" alt=""
+                class="large-icon" title="View Cart"></button>
+      
+            <% if (isAuthenticated) { %>
+              <!-- Header after login -->
+              <div class="acc-dropdown">
+                <button class="icon-button"><img src="assets/account.png" alt="" class="large-icon" onclick="window.location.href='/profile'"></button>
+              </div>            
+            <% } else { %>
+              <!-- Header before login -->
+              <div class="acc-dropdown">
+                    <button class="icon-button"><img src="assets/account.png" alt="" class="large-icon"></button>
+                    <div class="acc-dropdown-content">
+                        <button onclick="document.getElementById('cloginform').style.display='block'">Customer</button>
+                    </div>
+                </div>
+            <% } %>
+          </div>
+        </div>
+      
+        <!-- Login Modal -->
+        <% if (!isAuthenticated) { %>
+            <div class="modal-container" id="cloginform">
+                <div class="center animate">
+                    <div class="login-title">
+                        <h2>Login</h2>
+                    </div>
+                    <div class="formpage">
+                        <div   class="lato-regular">
+                            <div class="btn">
+                                <button id="c-login"><img src="assets/google-icon.png" alt=""
+                                        id="google-logo">Continue with Google</button>
+                                <button type="button" onclick="closePopup()"
+                                    class="cancelbtn">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <% } %>
+      </header>
+
+    <div class="empty-bar"></div>       <!-- This needs to be removed by adjusting vertical margins of below elements -->
+
+    <div class="container">
+        <div class="gallery">
+            <div class="slides">
+                <img src="assets/flower_preservation.jpg" alt="" class="slide-image">
+            </div>
+            <div class="slides">
+                <img src="assets/corporate_gifts.jpg" alt="" class="slide-image">
+            </div>
+            <div class="slides">
+                <img src="assets/frames_and_keychains.jpg" alt="" class="slide-image">
+            </div>
+            <div class="slides">
+                <img src="assets/art_and_decor.jpg" alt="" class="slide-image">
+            </div>
+            <div class="slides">
+                <img src="assets/jewellery.jpg" alt="" class="slide-image">
+            </div>
+
+            <!-- Thumbnail Images -->
+
+            <div class="thumbnail-row">
+                <div class="thumbnail-col">
+                    <img src="assets/flower_preservation.jpg" alt="" class="thumbnail-image" onclick="currentSlide(1)">
+                </div>
+                <div class="thumbnail-col">
+                    <img src="assets/corporate_gifts.jpg" alt="" class="thumbnail-image" onclick="currentSlide(2)">
+                </div>
+                <div class="thumbnail-col">
+                    <img src="assets/frames_and_keychains.jpg" alt="" class="thumbnail-image" onclick="currentSlide(3)">
+                </div>
+                <div class="thumbnail-col">
+                    <img src="assets/art_and_decor.jpg" alt="" class="thumbnail-image" onclick="currentSlide(4)">
+                </div>
+                <div class="thumbnail-col">
+                    <img src="assets/jewellery.jpg" alt="" class="thumbnail-image" onclick="currentSlide(5)">
+                </div>
+            </div>
+        </div>
+
+
+        <div class="product-details lato-regular">
+            <div class="title-icon-row">
+                <div class="title-icon-row-left">
+                    <h2 id="product-title">Flower Preservative</h2>
+                </div>
+                <div class="title-icon-row-right">
+                    <button class="icon-button" onclick="window.location.href='h'"><img src="assets/share.png" alt=""
+                        class="large-icon"></button>
+                <button class="icon-button" onclick="window.location.href='h'"><img src="assets/wishlist.png"
+                        alt="" class="large-icon"></button>
+                </div>
+            </div>
+            <hr class="horizontal-rule">
+            <div class="rating-row">
+                <div class="rating-bar">
+                    <img src="assets/rating.png" alt="" class="rating-img">
+                    <img src="assets/rating.png" alt="" class="rating-img">
+                    <img src="assets/rating.png" alt="" class="rating-img">
+                    <img src="assets/rating.png" alt="" class="rating-img">
+                    <img src="assets/rating.png" alt="" class="rating-img">
+                </div>
+            </div>
+            <div class="rating-count-bar">
+                <div class="rating-list">
+                    <div class="rating-count">&#8226; X ratings</div>
+                    <div class="rating-count">&#8226; Y reviews</div>
+                </div>
+            </div>
+            <hr class="horizontal-rule">
+            <div class="product-price-box">
+                <h2 id="product-price">₹100</h2>
+            </div>
+
+            <!-- In Page Tabs Start -->
+            <div class="tab-container">
+                <div class="tab-button-row">
+                    <button class="tab-button" id="tab1-button" onclick="openTab(event, 'description')">Button 1</button>
+                    <button class="tab-button" id="tab2-button" onclick="openTab(event, 'detailedinfo')">Button 2</button>
+                    <button class="tab-button" id="tab3-button" onclick="openTab(event, 'moreinfo')">Button 3</button>
+                </div>
+                <div class="tab-content" id="description">
+                    <p>Lorem1 ipsum dolor sit amet consectetur adipisicing elit. Ratione repellat nobis aperiam perspiciatis et accusantium, corrupti libero. Commodi fugit distinctio perferendis ea dolorum voluptas non sunt assumenda, totam sequi provident, nesciunt tempora error recusandae veritatis? Aliquam aut natus repudiandae eum tempora veniam reprehenderit quasi doloribus optio dignissimos, eius unde labore.</p>
+                </div>
+                <div class="tab-content" id="detailedinfo">
+                    <p>Lorem2 ipsum dolor sit amet consectetur adipisicing elit. Ratione repellat nobis aperiam perspiciatis et accusantium, corrupti libero. Commodi fugit distinctio perferendis ea dolorum voluptas non sunt assumenda, totam sequi provident, nesciunt tempora error recusandae veritatis? Aliquam aut natus repudiandae eum tempora veniam reprehenderit quasi doloribus optio dignissimos, eius unde labore.</p>
+                </div>
+                <div class="tab-content" id="moreinfo">
+                    <p>Lorem3 ipsum dolor sit amet consectetur adipisicing elit. Ratione repellat nobis aperiam perspiciatis et accusantium, corrupti libero. Commodi fugit distinctio perferendis ea dolorum voluptas non sunt assumenda, totam sequi provident, nesciunt tempora error recusandae veritatis? Aliquam aut natus repudiandae eum tempora veniam reprehenderit quasi doloribus optio dignissimos, eius unde labore.</p>
+                </div>
+            </div>
+            <!-- In Page Tabs End -->
+            
+            <div class="pincode-row">
+                <input type="number" name="pincode" id="pincode-field" placeholder="Pincode">
+                <button id="pincode-button"><img src="assets/location.png" alt="" id="location-icon">Check Availability</button>
+            </div>
+
+
+            <div class="order-button-row">
+                <button id="personalize-btn"><img src="assets/edit.png" alt="" id="personalize-icon">Personalize</button>
+                <button id="shopping-cart-btn"><img src="assets/shopping-cart.png" alt="" id="shopping-cart-icon">Add to Cart</button>
+            </div>
+
+        </div>
+        
+    </div>
+    
+
+    <footer>
+        <div class="about">
+            <div class="about-text">
+                <h3 id="about-title">About Me</h3>
+                <p class="about-para">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Id libero possimus aspernatur? Quisquam
+                    quia
+                    minima vero laudantium quaerat deleniti totam, quas reprehenderit ullam consectetur repellat,
+                    repellendus voluptatem sint dolores accusamus! Corrupti placeat dolorem aliquid, esse ullam
+                    voluptatibus
+                    doloribus vero provident dolore assumenda ratione quidem error facere possimus a repudiandae veniam
+                    fugit dolores id, quaerat, iste enim asperiores ab! Quis nam fuga cupiditate exercitationem tempora
+                    saepe dolor repellendus aperiam quisquam autem! Quis officia iure perferendis deleniti.
+                </p>
+            </div>
+            <div class="about-image"><img src="" alt=""></div>
+        </div>
+        <div class="socials">
+            <span class="socials-text">Follow me on:</span>
+            <a href="https://www.instagram.com/" target="_blank"><img src="assets/instagram.png" alt=""
+                    class="social-icon"></a>
+            <a href="mialto:s.alane@somaiya.edu" target="_blank"><img src="assets/mail.png" alt=""
+                    class="social-icon"></a>
+            <a href="https://www.facebook.com/" target="_blank"><img src="assets/facebook.png" alt=""
+                    class="social-icon"></a>
+            <a href="https://www.youtube.com/" target="_blank"><img src="assets/youtube.png" alt=""
+                    class="social-icon"></a>
+        </div>
+    </footer>
+</body>
+
+<script src="js/nav_scroll.js"></script>
+<script>
+  document.getElementById('c-login').addEventListener('click', function() {
+    // Redirect to the Google OAuth route
+    window.location.href = '/auth/google';
+  });
+// Function for Onload Login Popup
+window.onload = function() {
+    setTimeout(function() {
+        if (!sessionStorage.getItem('popupShown')) {
+            // Show the popup if it hasn't been shown in this session
+            document.getElementById("cloginform").style.display = "block";
+        }
+    }, 2000); // Delay of 2000 milliseconds (2 seconds)
+};
+
+// Function to close the popup
+function closePopup() {
+    document.getElementById("cloginform").style.display = "none";
+    // Set a flag in sessionStorage to prevent the popup from showing again in this session
+    sessionStorage.setItem('popupShown', 'true');
+}
+
+// Fuction for Product's Image Gallery
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("slides");
+  let dots = document.getElementsByClassName("thumbnail-image");
+//   let captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active-slide", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active-slide";
+//   captionText.innerHTML = dots[slideIndex-1].alt;
+}
+
+
+//Function for In page tabs
+function openTab(evt, tabTitle) {
+  // Declare all variables
+  var i, tabcontent, tablinks;
+
+  // Get all elements with class="tabcontent" and hide them
+  tabcontent = document.getElementsByClassName("tab-content");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Get all elements with class="tablinks" and remove the class "active"
+  tablinks = document.getElementsByClassName("tab-button");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active-tab-button", "");
+  }
+
+  // Show the current tab, and add an "active" class to the button that opened the tab
+  document.getElementById(tabTitle).style.display = "block";
+  evt.currentTarget.className += " active-tab-button";
+}
+console.log(25)
+
+const def_tab=document.getElementById("tab1-button")
+def_tab.click();
+
+</script>
+
+
+</html>
