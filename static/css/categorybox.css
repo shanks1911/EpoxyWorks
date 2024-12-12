@@ -1,0 +1,145 @@
+.category-bar {
+    display: flex;
+    flex-direction: row;
+    border: 2px solid rgba(0, 0, 0, 0.25);
+    /* border-image: linear-gradient(45deg, #FF5733, #FFBD33, #ffe100) 1; */
+    border-radius: 8px;
+    padding: 16px 0px;
+    width: 96vw;
+    margin: 8px auto;
+    box-shadow: 0px 0px 32px 0.5px rgba(0, 0, 0, 0.25);
+}
+
+.category-row {
+    display: flex;
+    width: 100%;
+}
+
+.category-button {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    /* border: 2px solid red; */
+    align-items: center;
+    flex: 1;
+    gap: 8px;
+    position: relative;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.category-button * {
+    margin: auto;
+    text-align: center;
+    transition: 0.25s;
+    text-decoration: none;
+}
+
+.category-name {
+    color: black;
+}
+
+.category-button {
+    border-right: 2px solid red;
+}
+
+.category-button:hover .category-icon {
+    transform: scale(1.05);
+    transition: 0.25s;
+}
+
+#category-8 {
+    border: none;
+}
+
+@media (max-width: 450px) {
+    .category-bar {
+        display: flex;
+        flex-direction: column;
+        padding: 8px 0px;
+        margin: 4px auto;
+    }
+
+    .category-row {
+        margin-top: 8px;
+    }
+
+    .category-button {
+        height: 75px;
+    }
+
+    .category-icon img {
+        height: 32px;
+        width: auto;
+    }
+
+    .category-name {
+        font-size: 0.6rem;
+    }
+
+    #category-4 {
+        border: none;
+    }
+
+
+    .bottom-line {
+        width: calc(100% - 20px);
+        margin: auto;
+        height: 1px;
+        background-color: #dd2727;
+        position: absolute;
+        bottom: -4px;
+        left: 4px;
+        right: 4px;
+    }
+}
+
+@media (min-width: 451px) and (max-width: 999px) {
+
+
+    .category-button {
+        height: 75px;
+    }
+
+    .category-icon img {
+        height: 32px;
+        width: auto;
+    }
+
+    .category-name {
+        font-size: 0.75rem;
+    }
+}
+
+
+@media (min-width: 1000px) and (max-width: 1299px) {
+    
+
+    .category-button {
+        height: 75px;
+    }
+
+    .category-icon img {
+        height: 48px;
+        width: auto;
+    }
+
+    .category-name {
+        font-size: 0.8rem;
+    }
+}
+
+@media (min-width: 1300px) {
+    .category-button {
+        height: 75px;
+    }
+
+    .category-icon img {
+        height: 48px;
+        width: auto;
+    }
+
+    .category-name {
+        font-size: 0.9rem;
+    }
+}
