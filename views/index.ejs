@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Epoxy Works | Home</title>
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/categorybox.css">
+    <link rel="stylesheet" href="css/productcard.css">
     <script src="js/nav_scroll.js"></script>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <meta name="google-signin-client_id" content="<%= process.env.GOOGLE_CLIENT_ID %>">
@@ -22,7 +24,7 @@
     <header id="headerbar">
         <div class="title-bar">
           <div class="head-left">
-            <img src="assets/file.png" alt="logo" id="logo">
+            <a href="index.html" id="home-redirect"><img src="assets/file.png" alt="logo" id="logo"></a>
             <h1 class="company-title lato-bold">Something Little Special</h1>
             <input type="text" name="searchbar" id="searchbar" placeholder="Search...">
           </div>
@@ -74,6 +76,86 @@
 
     <div class="empty-bar"></div>       <!-- This needs to be removed by adjusting vertical margins of below elements -->
 
+    <div class="mobile-searchbox">
+        <input type="text" name="mobile-searchbar" id="mobile-searchbar" placeholder="Search...">
+    </div>
+
+    <div class="category-bar">
+        <div class="category-row">
+            <div class="category-button" id="category-1">
+                <a href="">
+                    <div class="category-icon">
+                        <img src="assets/category-icons/flower-preservatives.png" alt="">
+                    </div>
+                    <div class="category-name">Flower Presevatives</div>
+                    <div class="bottom-line"></div>
+                </a>
+            </div>
+            <div class="category-button" id="category-2">
+                <a href="">
+                    <div class="category-icon">
+                        <img src="assets/category-icons/frames.png" alt="">
+                    </div>
+                    <div class="category-name">Photo Frames</div>
+                    <div class="bottom-line"></div>
+                </a>
+            </div>
+            <div class="category-button" id="category-3">
+                <a href="">
+                    <div class="category-icon">
+                        <img src="assets/category-icons/jewelry.png" alt="">
+                    </div>
+                    <div class="category-name">Jewelleries</div>
+                    <div class="bottom-line"></div>
+                </a>
+            </div>
+            <div class="category-button" id="category-4">
+                <a href="">
+                    <div class="category-icon">
+                        <img src="assets/category-icons/painting.png" alt="">
+                    </div>
+                    <div class="category-name">Paintings</div>
+                    <div class="bottom-line"></div>
+                </a>
+            </div>
+        </div>
+
+        <div class="category-row">
+            <div class="category-button" id="category-5">
+                <a href="">
+                    <div class="category-icon">
+                        <img src="assets/category-icons/corporate-gifts.png" alt="">
+                    </div>
+                    <div class="category-name">Corporate Gifts</div>
+                </a>
+            </div>
+            <div class="category-button" id="category-6">
+                <a href="">
+                    <div class="category-icon">
+                        <img src="assets/category-icons/trays.png" alt="">
+                    </div>
+                    <div class="category-name">Dining Essentials</div>
+                </a>
+            </div>
+            <div class="category-button" id="category-7">
+                <a href="">
+                    <div class="category-icon">
+                        <img src="assets/category-icons/home-decor.png" alt="">
+                    </div>
+                    <div class="category-name">Home Decor</div>
+                </a>
+            </div>
+            <div class="category-button" id="category-8">
+                <a href="">
+                    <div class="category-icon">
+                        <img src="assets/category-icons/miscellaneous.png" alt="">
+                    </div>
+                    <div class="category-name">Miscellaneous</div>
+                </a>
+            </div>
+        </div>
+    </div>
+
     <div class="carousel">
         <div class="mySlides fade">
             <img src="assets/carousel/carousel1.webp" id="carousel1" alt="">
@@ -86,9 +168,9 @@
         </div>
         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
         <a class="next" onclick="plusSlides(1)">&#10095;</a>
-  
+    </div>
 
-    <div class="category-box">
+<!--    <div class="category-box">
         <h2 id="category-title">Explore Various Categories</h2>
         <div class="category-row">
             <div class="category-card">
@@ -158,91 +240,181 @@
             </div>
         </div>
 
-    </div>
+    </div>-->
 
 
     <div class="products">
         <div class="product-titlebar">
             <h2 class="product-titlebar-content lato-regular">Best Selling Products</h2>
         </div>
-        <div class="product-card-row">
+        <div class="product-row">
             <div class="product-card">
-                <div class="product-image">
+                <div class="product-images">
                     <img src="assets/product.jpg">
+                    <div class="fav-icon-div">
+                        <img src="assets/favourite.png" alt="">
+                    </div>
                 </div>
-                <div class="product-details lato-regular">
-                    <div class="product-name">
-                        <h3>Photo Frame</h3>
+                <div class="product-info lato-regular">
+                    <div class="product-name-div">
+                        <p class="product-name">Photo Frame</p>
                     </div>
-                    <div class="product-price">
-                        ₹ 0000.00
-                    </div>
-                    <div class="product-des">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    <div class="product-desc">
+                        <div class="product-desc-row">
+                            <p class="product-price">₹ 0000.00</p>
+                            <p class="product-rating">Rating Stars</p>
+                        </div>
+                        <div class="product-customization-row">
+                            <span class="custom-icon-box">
+                                <img src="assets/customize-icon.png" alt="">
+                            </span>
+                            <span class="customize-info">Customizable</span>
+                        </div>
                     </div>
                     <button class="product-cart-btn">Add to Cart</button>
                 </div>
             </div>
 
             <div class="product-card">
-                <div class="product-image">
+                <div class="product-images">
                     <img src="assets/product.jpg">
-                </div>
-                <div class="product-details lato-regular">
-                    <div class="product-name">
-                        <h3>Photo Frame</h3>
-                    </div>
-                    <div class="product-price">
-                        ₹ 0000.00
-                    </div>
-                    <div class="product-des">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    <div class="fav-icon-div">
+                        <img src="assets/favourite.png" alt="">
                     </div>
                 </div>
-                <button class="product-cart-btn">Add to Cart</button>
+                <div class="product-info lato-regular">
+                    <div class="product-name-div">
+                        <p class="product-name">Photo Frame</p>
+                    </div>
+                    <div class="product-desc">
+                        <div class="product-desc-row">
+                            <p class="product-price">₹ 0000.00</p>
+                            <p class="product-rating">Rating Stars</p>
+                        </div>
+                        <div class="product-customization-row">
+                            <span class="custom-icon-box">
+                                <img src="assets/customize-icon.png" alt="">
+                            </span>
+                            <span class="customize-info">Customizable</span>
+                        </div>
+                    </div>
+                    <button class="product-cart-btn">Add to Cart</button>
+                </div>
             </div>
 
             <div class="product-card">
-                <div class="product-image">
+                <div class="product-images">
                     <img src="assets/product.jpg">
-                </div>
-                <div class="product-details lato-regular">
-                    <div class="product-name">
-                        <h3>Photo Frame</h3>
-                    </div>
-                    <div class="product-price">
-                        ₹ 0000.00
-                    </div>
-                    <div class="product-des">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    <div class="fav-icon-div">
+                        <img src="assets/favourite.png" alt="">
                     </div>
                 </div>
-                <button class="product-cart-btn">Add to Cart</button>
+                <div class="product-info lato-regular">
+                    <div class="product-name-div">
+                        <p class="product-name">Photo Frame</p>
+                    </div>
+                    <div class="product-desc">
+                        <div class="product-desc-row">
+                            <p class="product-price">₹ 0000.00</p>
+                            <p class="product-rating">Rating Stars</p>
+                        </div>
+                        <div class="product-customization-row">
+                            <span class="custom-icon-box">
+                                <img src="assets/customize-icon.png" alt="">
+                            </span>
+                            <span class="customize-info">Customizable</span>
+                        </div>
+                    </div>
+                    <button class="product-cart-btn">Add to Cart</button>
+                </div>
             </div>
 
             <div class="product-card">
-                <div class="product-image">
+                <div class="product-images">
                     <img src="assets/product.jpg">
-                </div>
-                <div class="product-details lato-regular">
-                    <div class="product-name">
-                        <h3>Photo Frame</h3>
-                    </div>
-                    <div class="product-price">
-                        ₹ 0000.00
-                    </div>
-                    <div class="product-des">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    <div class="fav-icon-div">
+                        <img src="assets/favourite.png" alt="">
                     </div>
                 </div>
-                <button class="product-cart-btn">Add to Cart</button>
+                <div class="product-info lato-regular">
+                    <div class="product-name-div">
+                        <p class="product-name">Photo Frame</p>
+                    </div>
+                    <div class="product-desc">
+                        <div class="product-desc-row">
+                            <p class="product-price">₹ 0000.00</p>
+                            <p class="product-rating">Rating Stars</p>
+                        </div>
+                        <div class="product-customization-row">
+                            <span class="custom-icon-box">
+                                <img src="assets/customize-icon.png" alt="">
+                            </span>
+                            <span class="customize-info">Customizable</span>
+                        </div>
+                    </div>
+                    <button class="product-cart-btn">Add to Cart</button>
+                </div>
             </div>
 
+            <div class="product-card">
+                <div class="product-images">
+                    <img src="assets/product.jpg">
+                    <div class="fav-icon-div">
+                        <img src="assets/favourite.png" alt="">
+                    </div>
+                </div>
+                <div class="product-info lato-regular">
+                    <div class="product-name-div">
+                        <p class="product-name">Photo Frame</p>
+                    </div>
+                    <div class="product-desc">
+                        <div class="product-desc-row">
+                            <p class="product-price">₹ 0000.00</p>
+                            <p class="product-rating">Rating Stars</p>
+                        </div>
+                        <div class="product-customization-row">
+                            <span class="custom-icon-box">
+                                <img src="assets/customize-icon.png" alt="">
+                            </span>
+                            <span class="customize-info">Customizable</span>
+                        </div>
+                    </div>
+                    <button class="product-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card large-screen-hide">
+                <div class="product-images">
+                    <img src="assets/product.jpg">
+                    <div class="fav-icon-div">
+                        <img src="assets/favourite.png" alt="">
+                    </div>
+                </div>
+                <div class="product-info lato-regular">
+                    <div class="product-name-div">
+                        <p class="product-name">Photo Frame</p>
+                    </div>
+                    <div class="product-desc">
+                        <div class="product-desc-row">
+                            <p class="product-price">₹ 0000.00</p>
+                            <p class="product-rating">Rating Stars</p>
+                        </div>
+                        <div class="product-customization-row">
+                            <span class="custom-icon-box">
+                                <img src="assets/customize-icon.png" alt="">
+                            </span>
+                            <span class="customize-info">Customizable</span>
+                        </div>
+                    </div>
+                    <button class="product-cart-btn">Add to Cart</button>
+                </div>
+            </div>
         </div>
     </div>
 
+
     <div class="extra-det-box">
-        <div class="extra-det-row">
+        <div class="extra-det-row" id="customization-det-box">
             <div class="extra-det-image">
                 <img src="assets/customize.jpg" alt="">
             </div>
@@ -254,29 +426,21 @@
                     <p class="customization-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque
                         quis, nesciunt fugit debitis laboriosam corporis iusto nulla, numquam, porro vitae amet qui?
                         Reiciendis asperiores impedit alias, quas incidunt maxime unde qui distinctio delectus optio
-                        velit id? Esse mollitia ipsum suscipit laborum earum repellendus ad quod doloribus, rem est.
-                        Eveniet vitae ut nostrum animi? Architecto dolor quia fuga earum nemo assumenda alias quidem
-                        voluptates deserunt est, iure reiciendis odit perferendis corrupti error nisi aliquid, iusto hic
-                        autem quaerat vitae, minima veniam similique. Harum ea nihil et aperiam repellat iure cum libero
-                        esse minima ipsum. Nobis dolore, similique aliquam deleniti dolor repellat.</p>
+                        velit id? Esse mollitia ipsum suscipit laborum earum repellendus ad quod.</p>
                 </div>
             </div>
         </div>
 
-        <div class="extra-det-row">
+        <div class="extra-det-row" id="workshop-det-box">
             <div class="extra-det-text lato-regular">
                 <div class="extra-det-title">
                     <h2>Explore our Workshops</h2>
                 </div>
                 <div class="extra-det-des">
-                    <p class="customization-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque
+                    <p class="workshop-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque
                         quis, nesciunt fugit debitis laboriosam corporis iusto nulla, numquam, porro vitae amet qui?
                         Reiciendis asperiores impedit alias, quas incidunt maxime unde qui distinctio delectus optio
-                        velit id? Esse mollitia ipsum suscipit laborum earum repellendus ad quod doloribus, rem est.
-                        Eveniet vitae ut nostrum animi? Architecto dolor quia fuga earum nemo assumenda alias quidem
-                        voluptates deserunt est, iure reiciendis odit perferendis corrupti error nisi aliquid, iusto hic
-                        autem quaerat vitae, minima veniam similique. Harum ea nihil et aperiam repellat iure cum libero
-                        esse minima ipsum. Nobis dolore, similique aliquam deleniti dolor repellat.</p>
+                        velit id? Esse mollitia ipsum suscipit laborum earum repellendus ad quod.</p>
                 </div>
             </div>
             <div class="extra-det-image">
@@ -285,61 +449,149 @@
         </div>
     </div>
 
-    <div class="testimonial-box">
-        <div class="testimonial-card">
-            <div class="testimonial-icon"></div>
-            <div class="testimonial-user">User-1</div>
-            <div class="testimonial-comment">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque error
-                quibusdam libero pariatur exercitationem assumenda. Dolores numquam, corrupti adipisci illum ab
-                voluptatibus commodi veniam! Dolorum, soluta? Dolorum doloremque sit eius suscipit animi hic eos magni
-                adipisci ullam delectus. Doloribus, quo.</div>
+
+    <div class="testimonial-box lato-regular">
+        <div class="testimonial-title">
+            <h2>Our Testimonials</h2>
         </div>
-        <div class="testimonial-card">
-            <div class="testimonial-icon"></div>
-            <div class="testimonial-user">User-1</div>
-            <div class="testimonial-comment">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque error
-                quibusdam libero pariatur exercitationem assumenda. Dolores numquam, corrupti adipisci illum ab
-                voluptatibus commodi veniam! Dolorum, soluta? Dolorum doloremque sit eius suscipit animi hic eos magni
-                adipisci ullam delectus. Doloribus, quo.</div>
-        </div>
-        <div class="testimonial-card">
-            <div class="testimonial-icon"></div>
-            <div class="testimonial-user">User-1</div>
-            <div class="testimonial-comment">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque error
-                quibusdam libero pariatur exercitationem assumenda. Dolores numquam, corrupti adipisci illum ab
-                voluptatibus commodi veniam! Dolorum, soluta? Dolorum doloremque sit eius suscipit animi hic eos magni
-                adipisci ullam delectus. Doloribus, quo.</div>
+        <div class="testimonial-row">
+
+            <div class="testimonial-card">
+                <div class="testimonial-user-details">
+                    <div class="testimonial-icon">
+                        <img src="assets/account.png" alt="">
+                    </div>
+                    <div class="testimonial-user">
+                        <div class="testimonial-user-name">User-1</div>
+                        <div class="testimonial-user-role">Role 1</div>
+                    </div>
+                </div>
+                <span class="quote-open">&ldquo;</span>
+                <blockquote class="testimonial-comment">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Doloremque error
+                    quibusdam libero pariatur exercitationem assumenda. Dolores numquam, corrupti adipisci illum ab
+                    voluptatibus commodi veniam! Dolorum, soluta? Dolorum doloremque sit eius suscipit animi hic eos
+                    magni
+                    adipisci ullam delectus. Doloribus, quo!!!
+                </blockquote>
+                <span class="quote-close">&rdquo;</span>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-user-details">
+                    <div class="testimonial-icon">
+                        <img src="assets/account.png" alt="">
+                    </div>
+                    <div class="testimonial-user">
+                        <div class="testimonial-user-name">User-1</div>
+                        <div class="testimonial-user-role">Role 1</div>
+                    </div>
+                </div>
+                <span class="quote-open">&ldquo;</span>
+                <blockquote class="testimonial-comment">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Doloremque error
+                    quibusdam libero pariatur exercitationem assumenda. Dolores numquam, corrupti adipisci illum ab
+                    voluptatibus commodi veniam! Dolorum, soluta? Dolorum doloremque sit eius suscipit animi hic eos
+                    magni
+                    adipisci ullam delectus. Doloribus, quo!!!
+                </blockquote>
+                <span class="quote-close">&rdquo;</span>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-user-details">
+                    <div class="testimonial-icon">
+                        <img src="assets/account.png" alt="">
+                    </div>
+                    <div class="testimonial-user">
+                        <div class="testimonial-user-name">User-1</div>
+                        <div class="testimonial-user-role">Role 1</div>
+                    </div>
+                </div>
+                <span class="quote-open">&ldquo;</span>
+                <blockquote class="testimonial-comment">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Doloremque error
+                    quibusdam libero pariatur exercitationem assumenda. Dolores numquam, corrupti adipisci illum ab
+                    voluptatibus commodi veniam! Dolorum, soluta? Dolorum doloremque sit eius suscipit animi hic eos
+                    magni
+                    adipisci ullam delectus. Doloribus, quo!!!
+                </blockquote>
+                <span class="quote-close">&rdquo;</span>
+            </div>
+
+            <div class="testimonial-card medium-screen-show">
+                <div class="testimonial-user-details">
+                    <div class="testimonial-icon">
+                        <img src="assets/account.png" alt="">
+                    </div>
+                    <div class="testimonial-user">
+                        <div class="testimonial-user-name">User-1</div>
+                        <div class="testimonial-user-role">Role 1</div>
+                    </div>
+                </div>
+                <span class="quote-open">&ldquo;</span>
+                <blockquote class="testimonial-comment">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Doloremque error
+                    quibusdam libero pariatur exercitationem assumenda. Dolores numquam, corrupti adipisci illum ab
+                    voluptatibus commodi veniam! Dolorum, soluta? Dolorum doloremque sit eius suscipit animi hic eos
+                    magni
+                    adipisci ullam delectus. Doloribus, quo!!!
+                </blockquote>
+                <span class="quote-close">&rdquo;</span>
+            </div>
         </div>
     </div>
 
-    <footer>
-        <div class="about">
-            <div class="about-text">
-                <h3 id="about-title">About Me</h3>
-                <p class="about-para">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Id libero possimus aspernatur? Quisquam
-                    quia
-                    minima vero laudantium quaerat deleniti totam, quas reprehenderit ullam consectetur repellat,
-                    repellendus voluptatem sint dolores accusamus! Corrupti placeat dolorem aliquid, esse ullam
-                    voluptatibus
-                    doloribus vero provident dolore assumenda ratione quidem error facere possimus a repudiandae veniam
-                    fugit dolores id, quaerat, iste enim asperiores ab! Quis nam fuga cupiditate exercitationem tempora
-                    saepe dolor repellendus aperiam quisquam autem! Quis officia iure perferendis deleniti.
-                </p>
+    <footer class="lato-regular">
+        <div class="footer-row">
+            <div class="footer-section">
+                <span class="footer-title">
+                    About
+                </span>
+                <div class="footer-list">
+                    <span class="footer-link"><a href="#">About Us</a></span>
+                    <span class="footer-link"><a href="#">Workshops</a></span>
+                </div>
             </div>
-            <div class="about-image"><img src="" alt=""></div>
+            <div class="footer-section">
+                <span class="footer-title">
+                    Customer Care
+                </span>
+                <div class="footer-list">
+                    <span class="footer-link"><a href="#">Help Center</a></span>
+                    <span class="footer-link"><a href="#">FAQs</a></span>
+                </div>
+            </div>
+            <div class="footer-section">
+                <span class="footer-title">
+                    Follow us on:
+                </span>
+                <div class="footer-list socials-box">
+                    <span class="footer-link"><a href="#"><img src="assets/instagram.png" class="socials-icon" alt=""></a></span>
+                    <span class="footer-link"><a href="#"><img src="assets/facebook.png" class="socials-icon"  alt=""></a></span>
+                    <span class="footer-link"><a href="#"><img src="assets/youtube.png" class="socials-icon" alt=""></a></span>
+                </div>
+            </div>
+            <div class="footer-section">
+                <span class="footer-title">
+                    Contacts
+                </span>
+                <div class="footer-list">
+                    <div class="contact-item">
+                        <span class="contact-text">Mobile:</span>
+                        <span class="contact-link"><a href="tel:000000000">000000000</a></span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-text">WhatsApp:</span>
+                        <span class="contact-link"><a href="https://wa.me/000000000">000000000</a></span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-text">Email:</span>
+                        <span class="contact-link"></span><a href="mailto:abc.123@gmail.edu">abc.123@gmail.edu</a></span>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="socials">
-            <span class="socials-text">Follow me on:</span>
-            <a href="https://www.instagram.com/" target="_blank"><img src="assets/instagram.png" alt=""
-                    class="social-icon"></a>
-            <a href="mialto:s.alane@somaiya.edu" target="_blank"><img src="assets/mail.png" alt=""
-                    class="social-icon"></a>
-            <a href="https://www.facebook.com/" target="_blank"><img src="assets/facebook.png" alt=""
-                    class="social-icon"></a>
-            <a href="https://www.youtube.com/" target="_blank"><img src="assets/youtube.png" alt=""
-                    class="social-icon"></a>
-        </div>
+        <div class="copyright-bar">&#169; 2024, All Rights Reserved.</div>
     </footer>
 
 </body>
