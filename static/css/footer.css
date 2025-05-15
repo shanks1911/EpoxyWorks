@@ -9,7 +9,7 @@
 footer {
     width: 100%;
     height: fit-content;
-    background-color: #303030;
+    background-color: #380a5a;
     color: white;
     margin-top: 40px;
 
@@ -51,7 +51,7 @@ footer {
 .socials-box {
     display: flex;
     flex-direction: row;
-    margin: 0px;
+    margin-left: 20px;
 }
 
 .socials-icon {
@@ -143,8 +143,8 @@ footer {
         flex-direction: row;
         flex-wrap: wrap;
     }
-
 }
+
 
 /* Responsive Styles End */
 
