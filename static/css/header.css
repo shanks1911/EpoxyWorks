@@ -1,3 +1,20 @@
+/* 
+
+PROBABLE CHOICES
+#4f0341 (PURPLE), #FFFFFF (WHITE)
+
+*/
+
+
+:root {
+    --header-height: 60px;
+    --color-1: #6a0dad;     /* Soft Mauve */
+    --color-2: #d8d8d8;     /* Deep Plum */
+    /* --color-3: #fba6a1; */     /* Warm Coral */
+    /* --color-4: #fec1a2; */     /* Peach */
+    /* --color-5: #ffdcc9; */     /* Light Cream */
+}
+
 body {
     margin: 0px 0px;
     padding: 0px 0px;
@@ -6,11 +23,12 @@ body {
 /*Header Styles Start*/
 
 header {
-    background: linear-gradient(180deg, #ffd490, #f8dcb6);
+    /* background: linear-gradient(180deg, #ffd490, #f8dcb6); */
+    background-color: var(--color-1);
     display: block;
     height: auto;
     position: fixed;
-    width: 100%;
+    width: 100vw;
     height: auto;
     align-items: center;
     transition: 500ms;
@@ -22,6 +40,14 @@ header {
 
 .title-bar {
     display: flex;
+}
+
+#home-redirect {
+    text-decoration: none;
+}
+
+#home-redirect:visited {
+    text-decoration: none;
 }
 
 .head-left,
@@ -39,13 +65,14 @@ header {
     width: 48px;
     height: auto;
     border-radius: 40px;
-    margin: 0px 10px;
+    margin: 0px 8px;
 }
 
 .company-title {
     display: inline-block;
     margin: 0px 50px;
-    color: #f92c63;
+    /* color: #f92c63; */
+    color: var(--color-2);
     font-size: 24px;
 }
 
@@ -57,15 +84,16 @@ header {
     border-radius: 8px;
     transition: 500ms;
     transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
-    background-color: #f4f4f4;
+    background-color: #f1f1f1;
     border: 4px solid transparent;
     transition: 0ms;
+    box-sizing: border-box;
 }
 
 #searchbar:focus {
     /* width: 600px; */
-    background-color: #ffffff;
-    border: 4px solid #ffb088;
+    background-color: #f1f1f1;
+    border: 3px solid #55286f;
 
 }
 
@@ -128,9 +156,13 @@ header {
 }
 
 .empty-bar {
-    height: 60px;
+    height: var(--header-height);
     width: 100%;
     display: block;
+}
+
+#mobile-searchbar {
+    display: none;
 }
 
 /*Modal Form Styles Start*/
@@ -151,15 +183,15 @@ header {
 
 .center {
     width: 22.5vw;
-    min-width: 300px;
+    min-width: 280px;
     height: auto;
     margin: auto;
     margin-top: 15vh;
     margin-bottom: 2.5vh;
     background-color: #ffffff;
-    border-radius: 25px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    border-radius: 24px;
+    padding-top: 12px;
+    padding-bottom: 12px;
     border: 2px solid black;
 }
 
@@ -322,3 +354,126 @@ a:visited {
 /*Modal Form Styles End*/
 
 /*Header Styles End*/
+
+
+/* Responsive Styles Start */
+
+@media (max-width:550px) {
+    #logo {
+        width: 32px;
+        height: auto;
+    }
+
+    .company-title {
+        margin: 0px 4px;
+        font-size: 0.85rem;
+    }
+
+    #searchbar {
+        display: none;
+    }
+
+    .head-right {
+        margin-right: 8px;
+    }
+
+    .icon-button {
+        padding: 0px;
+    }
+
+    .large-icon {
+        width: 24px;
+        height: auto;
+    }
+
+    .acc-dropdown-content button {
+            display: block;
+            width: 80px;
+            height: 24px;
+            color: black;
+            text-decoration: none;
+            background-color: #ffb798;
+            border: 3px solid transparent;
+            font-size: 0.6rem;
+        }
+    
+        .acc-dropdown-content button:hover {
+            background-color: #ff8a59;
+            color: rgb(65, 65, 65);
+        }
+
+        .empty-bar {
+            height: var(--header-height);
+        }
+
+        #mobile-searchbar {
+            display: block;
+            width: 96vw;
+            margin: 0px auto 16px auto;
+            font-size: 0.85rem;
+            padding: 4px 16px;
+            box-sizing: border-box;
+            border: none;
+            border-bottom: 2px solid rgb(198, 198, 198);
+            outline: none;
+        }
+
+        #mobile-searchbar:focus {
+            border-bottom: 2px solid black;
+        }
+}
+
+@media (min-width:551px) and (max-width:900px) {
+    #logo {
+        width: 32px;
+        height: auto;
+    }
+
+    .company-title {
+        margin: 0px 16px;
+        font-size: 0.85rem;
+    }
+
+    #searchbar {
+        width: 200px;
+    }
+
+    .head-right {
+        margin-right: 16px;
+    }
+
+    .icon-button {
+        padding: 0px 4px;
+        margin: 0px 4px;
+    }
+
+    .large-icon {
+        width: 32px;
+        height: auto;
+    }
+
+    .acc-dropdown-content button {
+            display: block;
+            width: 0px;
+            height: 24px;
+            color: black;
+            text-decoration: none;
+            background-color: #ffb798;
+            border: 3px solid transparent;
+            font-size: 0.6rem;
+        }
+    
+        .acc-dropdown-content button:hover {
+            background-color: #ff8a59;
+            color: rgb(65, 65, 65);
+        }
+
+        .empty-bar {
+            height: var(--header-height);
+        }
+}
+
+
+
+
+/* Responsive Styles End */
