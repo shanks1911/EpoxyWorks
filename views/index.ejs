@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Epoxy Works | Home</title>
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/fonts.css">
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/categorybox.css">
-    <link rel="stylesheet" href="css/productcard.css">
+    <link rel="stylesheet" href="../static/css/index.css">
+    <link rel="stylesheet" href="../static/css/fonts.css">
+    <link rel="stylesheet" href="../static/css/header.css">
+    <link rel="stylesheet" href="../static/css/footer.css">
+    <link rel="stylesheet" href="../static/css/categorybar.css">
+    <link rel="stylesheet" href="../static/css/productcard.css">
     <script src="js/nav_scroll.js"></script>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <meta name="google-signin-client_id" content="<%= process.env.GOOGLE_CLIENT_ID %>">
@@ -24,25 +24,25 @@
     <header id="headerbar">
         <div class="title-bar">
           <div class="head-left">
-            <a href="index.html" id="home-redirect"><img src="assets/file.png" alt="logo" id="logo"></a>
+            <a href="index.html" id="home-redirect"><img src="../static/assets/file.png" alt="logo" id="logo"></a>
             <h1 class="company-title lato-bold">Something Little Special</h1>
             <input type="text" name="searchbar" id="searchbar" placeholder="Search...">
           </div>
           <div class="head-right">
-            <button class="icon-button" onclick="window.location.href='h'"><img src="assets/wishlist.png" alt=""
+            <button class="icon-button" onclick="window.location.href='h'"><img src="../static/assets/wishlist-white.png" alt=""
                 class="large-icon" title="View Wishlist"></button>
-            <button class="icon-button" onclick="window.location.href='h'"><img src="assets/shopping-cart.png" alt=""
+            <button class="icon-button" onclick="window.location.href='h'"><img src="../static/assets/shopping-cart-white.png" alt=""
                 class="large-icon" title="View Cart"></button>
       
             <% if (isAuthenticated) { %>
               <!-- Header after login -->
               <div class="acc-dropdown">
-                <button class="icon-button"><img src="assets/account.png" alt="" class="large-icon" onclick="window.location.href='/profile'"></button>
+                <button class="icon-button"><img src="../static/assets/account-white.png" alt="" class="large-icon" onclick="window.location.href='/profile'"></button>
               </div>            
             <% } else { %>
               <!-- Header before login -->
               <div class="acc-dropdown">
-                    <button class="icon-button"><img src="assets/account.png" alt="" class="large-icon"></button>
+                    <button class="icon-button"><img src="../static/assets/account-white.png" alt="" class="large-icon"></button>
                     <div class="acc-dropdown-content">
                         <button onclick="document.getElementById('cloginform').style.display='block'">Customer</button>
                     </div>
@@ -61,7 +61,7 @@
                     <div class="formpage">
                         <div   class="lato-regular">
                             <div class="btn">
-                                <button id="c-login"><img src="assets/google-icon.png" alt=""
+                                <button id="c-login"><img src="../static/assets/google-icon.png" alt=""
                                         id="google-logo">Continue with Google</button>
                                 <button type="button" onclick="closePopup()"
                                     class="cancelbtn">Cancel</button>
@@ -85,7 +85,7 @@
             <div class="category-button" id="category-1">
                 <a href="">
                     <div class="category-icon">
-                        <img src="assets/category-icons/flower-preservatives.png" alt="">
+                        <img src="../static/assets/category-icons/flower-preservatives.png" alt="">
                     </div>
                     <div class="category-name">Flower Presevatives</div>
                     <div class="bottom-line"></div>
@@ -94,7 +94,7 @@
             <div class="category-button" id="category-2">
                 <a href="">
                     <div class="category-icon">
-                        <img src="assets/category-icons/frames.png" alt="">
+                        <img src="../static/assets/category-icons/frames.png" alt="">
                     </div>
                     <div class="category-name">Photo Frames</div>
                     <div class="bottom-line"></div>
@@ -103,7 +103,7 @@
             <div class="category-button" id="category-3">
                 <a href="">
                     <div class="category-icon">
-                        <img src="assets/category-icons/jewelry.png" alt="">
+                        <img src="../static/assets/category-icons/jewelry.png" alt="">
                     </div>
                     <div class="category-name">Jewelleries</div>
                     <div class="bottom-line"></div>
@@ -112,7 +112,7 @@
             <div class="category-button" id="category-4">
                 <a href="">
                     <div class="category-icon">
-                        <img src="assets/category-icons/painting.png" alt="">
+                        <img src="../static/assets/category-icons/painting.png" alt="">
                     </div>
                     <div class="category-name">Paintings</div>
                     <div class="bottom-line"></div>
@@ -124,7 +124,7 @@
             <div class="category-button" id="category-5">
                 <a href="">
                     <div class="category-icon">
-                        <img src="assets/category-icons/corporate-gifts.png" alt="">
+                        <img src="../static/assets/category-icons/corporate-gifts.png" alt="">
                     </div>
                     <div class="category-name">Corporate Gifts</div>
                 </a>
@@ -132,7 +132,7 @@
             <div class="category-button" id="category-6">
                 <a href="">
                     <div class="category-icon">
-                        <img src="assets/category-icons/trays.png" alt="">
+                        <img src="../static/assets/category-icons/trays.png" alt="">
                     </div>
                     <div class="category-name">Dining Essentials</div>
                 </a>
@@ -140,7 +140,7 @@
             <div class="category-button" id="category-7">
                 <a href="">
                     <div class="category-icon">
-                        <img src="assets/category-icons/home-decor.png" alt="">
+                        <img src="../static/assets/category-icons/home-decor.png" alt="">
                     </div>
                     <div class="category-name">Home Decor</div>
                 </a>
@@ -148,7 +148,7 @@
             <div class="category-button" id="category-8">
                 <a href="">
                     <div class="category-icon">
-                        <img src="assets/category-icons/miscellaneous.png" alt="">
+                        <img src="../static/assets/category-icons/miscellaneous.png" alt="">
                     </div>
                     <div class="category-name">Miscellaneous</div>
                 </a>
@@ -158,90 +158,17 @@
 
     <div class="carousel">
         <div class="mySlides fade">
-            <img src="assets/carousel/carousel1.webp" id="carousel1" alt="">
+            <img src="../static/assets/carousel/carousel1.webp" id="carousel1" alt="">
         </div>
         <div class="mySlides fade">
-            <img src="assets/carousel/carousel2.webp" id="carousel2" alt="">
+            <img src="../static/assets/carousel/carousel2.webp" id="carousel2" alt="">
         </div>
         <div class="mySlides fade">
-            <img src="assets/carousel/carousel3.webp" id="carousel3" alt="">
+            <img src="../static/assets/carousel/carousel3.webp" id="carousel3" alt="">
         </div>
         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
         <a class="next" onclick="plusSlides(1)">&#10095;</a>
     </div>
-
-<!--    <div class="category-box">
-        <h2 id="category-title">Explore Various Categories</h2>
-        <div class="category-row">
-            <div class="category-card">
-                <img src="assets/flower_preservation.jpg" alt="" class="category-image">
-                <div class="category-details">
-                    <h5 class="category-title">Flower Preservations</h5>
-                    <h6 class="category-desc">Preserve your precious memories with our exquisite flower preservation
-                        gifts. Capture the beauty of your special moments forever in stunning, handcrafted keepsakes
-                        that will keep your flowers vibrant and cherished.
-                    </h6>
-                </div>
-            </div>
-            <div class="category-card">
-                <img src="assets/frames_and_keychains.jpg" alt="" class="category-image">
-                <div class="category-details">
-                    <h5 class="category-title">Frames and Keychains</h5>
-                    <h6 class="category-desc">Celebrate life's beautiful moments with our charming photo frames and
-                        keychains. From inspiring quotes to delightful magnet frames, these personalized treasures are
-                        perfect for adding a touch of magic to your everyday life.
-                    </h6>
-                </div>
-            </div>
-            <div class="category-card">
-                <img src="assets/jewellery.jpg" alt="" class="category-image">
-                <div class="category-details">
-                    <h5 class="category-title">Jewellery</h5>
-                    <h6 class="category-desc">Adorn yourself with our captivating jewellery collection! Discover elegant
-                        pendants, chic bracelets, and dazzling earrings that will make you shine and sparkle. Perfect
-                        gifts for adding a touch of glamour to any outfit.
-                    </h6>
-                </div>
-            </div>
-        </div>
-
-        <div class="category-row">
-            <button>
-            <div class="category-card">
-                <img src="assets/corporate_gifts.jpg" alt="" class="category-image">
-                <div class="category-details">
-                    <h5 class="category-title">Corporate/Return Gifts</h5>
-                    <h6 class="category-desc">mpress and delight with our sophisticated corporate and return gifts.
-                        Perfect for any occasion, these elegant and thoughtful presents will leave a lasting impression
-                        on clients, colleagues, and guests alike.
-                    </h6>
-                </div>
-            </div>
-        </button>
-            <div class="category-card">
-                <img src="assets/art_and_decor.jpg" alt="" class="category-image">
-                <div class="category-details">
-                    <h5 class="category-title">Art and Decor</h5>
-                    <h6 class="category-desc">Transform your space with our stunning art and decor pieces! From
-                        personalized nameplates to breathtaking paintings, candle stands, lamps, and wall clocks, our
-                        collection will add a unique touch to your home or office.
-                    </h6>
-                </div>
-            </div>
-            <div class="category-card">
-                <img src="assets/functional_gifts.jpg" alt="" class="category-image">
-                <div class="category-details">
-                    <h5 class="category-title">Functional Gifts</h5>
-                    <h6 class="category-desc">Combine style and functionality with our amazing functional gifts! Explore
-                        our range of bookmarks, coasters, trays, and traditional gifts that are not only practical but
-                        also beautifully crafted to enhance your daily life.
-                    </h6>
-                </div>
-            </div>
-        </div>
-
-    </div>-->
-
 
     <div class="products">
         <div class="product-titlebar">
@@ -250,9 +177,9 @@
         <div class="product-row">
             <div class="product-card">
                 <div class="product-images">
-                    <img src="assets/product.jpg">
+                    <img src="../static/assets/product.jpg">
                     <div class="fav-icon-div">
-                        <img src="assets/favourite.png" alt="">
+                        <img src="../static/assets/favourite.png" alt="">
                     </div>
                 </div>
                 <div class="product-info lato-regular">
@@ -266,7 +193,7 @@
                         </div>
                         <div class="product-customization-row">
                             <span class="custom-icon-box">
-                                <img src="assets/customize-icon.png" alt="">
+                                <img src="../static/assets/customize-icon.png" alt="">
                             </span>
                             <span class="customize-info">Customizable</span>
                         </div>
@@ -277,9 +204,9 @@
 
             <div class="product-card">
                 <div class="product-images">
-                    <img src="assets/product.jpg">
+                    <img src="../static/assets/product.jpg">
                     <div class="fav-icon-div">
-                        <img src="assets/favourite.png" alt="">
+                        <img src="../static/assets/favourite.png" alt="">
                     </div>
                 </div>
                 <div class="product-info lato-regular">
@@ -293,7 +220,7 @@
                         </div>
                         <div class="product-customization-row">
                             <span class="custom-icon-box">
-                                <img src="assets/customize-icon.png" alt="">
+                                <img src="../static/assets/customize-icon.png" alt="">
                             </span>
                             <span class="customize-info">Customizable</span>
                         </div>
@@ -304,9 +231,9 @@
 
             <div class="product-card">
                 <div class="product-images">
-                    <img src="assets/product.jpg">
+                    <img src="../static/assets/product.jpg">
                     <div class="fav-icon-div">
-                        <img src="assets/favourite.png" alt="">
+                        <img src="../static/assets/favourite.png" alt="">
                     </div>
                 </div>
                 <div class="product-info lato-regular">
@@ -320,7 +247,7 @@
                         </div>
                         <div class="product-customization-row">
                             <span class="custom-icon-box">
-                                <img src="assets/customize-icon.png" alt="">
+                                <img src="../static/assets/customize-icon.png" alt="">
                             </span>
                             <span class="customize-info">Customizable</span>
                         </div>
@@ -331,9 +258,9 @@
 
             <div class="product-card">
                 <div class="product-images">
-                    <img src="assets/product.jpg">
+                    <img src="../static/assets/product.jpg">
                     <div class="fav-icon-div">
-                        <img src="assets/favourite.png" alt="">
+                        <img src="../static/assets/favourite.png" alt="">
                     </div>
                 </div>
                 <div class="product-info lato-regular">
@@ -347,7 +274,7 @@
                         </div>
                         <div class="product-customization-row">
                             <span class="custom-icon-box">
-                                <img src="assets/customize-icon.png" alt="">
+                                <img src="../static/assets/customize-icon.png" alt="">
                             </span>
                             <span class="customize-info">Customizable</span>
                         </div>
@@ -358,9 +285,9 @@
 
             <div class="product-card">
                 <div class="product-images">
-                    <img src="assets/product.jpg">
+                    <img src="../static/assets/product.jpg">
                     <div class="fav-icon-div">
-                        <img src="assets/favourite.png" alt="">
+                        <img src="../static/assets/favourite.png" alt="">
                     </div>
                 </div>
                 <div class="product-info lato-regular">
@@ -374,7 +301,7 @@
                         </div>
                         <div class="product-customization-row">
                             <span class="custom-icon-box">
-                                <img src="assets/customize-icon.png" alt="">
+                                <img src="../static/assets/customize-icon.png" alt="">
                             </span>
                             <span class="customize-info">Customizable</span>
                         </div>
@@ -385,9 +312,9 @@
 
             <div class="product-card large-screen-hide">
                 <div class="product-images">
-                    <img src="assets/product.jpg">
+                    <img src="../static/assets/product.jpg">
                     <div class="fav-icon-div">
-                        <img src="assets/favourite.png" alt="">
+                        <img src="../static/assets/favourite.png" alt="">
                     </div>
                 </div>
                 <div class="product-info lato-regular">
@@ -401,7 +328,7 @@
                         </div>
                         <div class="product-customization-row">
                             <span class="custom-icon-box">
-                                <img src="assets/customize-icon.png" alt="">
+                                <img src="../static/assets/customize-icon.png" alt="">
                             </span>
                             <span class="customize-info">Customizable</span>
                         </div>
@@ -416,7 +343,7 @@
     <div class="extra-det-box">
         <div class="extra-det-row" id="customization-det-box">
             <div class="extra-det-image">
-                <img src="assets/customize.jpg" alt="">
+                <img src="../static/assets/customize.jpg" alt="">
             </div>
             <div class="extra-det-text lato-regular">
                 <div class="extra-det-title">
@@ -444,7 +371,7 @@
                 </div>
             </div>
             <div class="extra-det-image">
-                <img src="assets/customize.jpg" alt="">
+                <img src="../static/assets/customize.jpg" alt="">
             </div>
         </div>
     </div>
@@ -459,7 +386,7 @@
             <div class="testimonial-card">
                 <div class="testimonial-user-details">
                     <div class="testimonial-icon">
-                        <img src="assets/account.png" alt="">
+                        <img src="../static/assets/account.png" alt="">
                     </div>
                     <div class="testimonial-user">
                         <div class="testimonial-user-name">User-1</div>
@@ -479,7 +406,7 @@
             <div class="testimonial-card">
                 <div class="testimonial-user-details">
                     <div class="testimonial-icon">
-                        <img src="assets/account.png" alt="">
+                        <img src="../static/assets/account.png" alt="">
                     </div>
                     <div class="testimonial-user">
                         <div class="testimonial-user-name">User-1</div>
@@ -500,7 +427,7 @@
             <div class="testimonial-card">
                 <div class="testimonial-user-details">
                     <div class="testimonial-icon">
-                        <img src="assets/account.png" alt="">
+                        <img src="../static/assets/account.png" alt="">
                     </div>
                     <div class="testimonial-user">
                         <div class="testimonial-user-name">User-1</div>
@@ -521,7 +448,7 @@
             <div class="testimonial-card medium-screen-show">
                 <div class="testimonial-user-details">
                     <div class="testimonial-icon">
-                        <img src="assets/account.png" alt="">
+                        <img src="../static/assets/account.png" alt="">
                     </div>
                     <div class="testimonial-user">
                         <div class="testimonial-user-name">User-1</div>
@@ -566,9 +493,9 @@
                     Follow us on:
                 </span>
                 <div class="footer-list socials-box">
-                    <span class="footer-link"><a href="#"><img src="assets/instagram.png" class="socials-icon" alt=""></a></span>
-                    <span class="footer-link"><a href="#"><img src="assets/facebook.png" class="socials-icon"  alt=""></a></span>
-                    <span class="footer-link"><a href="#"><img src="assets/youtube.png" class="socials-icon" alt=""></a></span>
+                    <span class="footer-link"><a href="#"><img src="../static/assets/instagram.png" class="socials-icon" alt=""></a></span>
+                    <span class="footer-link"><a href="#"><img src="../static/assets/facebook.png" class="socials-icon"  alt=""></a></span>
+                    <span class="footer-link"><a href="#"><img src="../static/assets/youtube.png" class="socials-icon" alt=""></a></span>
                 </div>
             </div>
             <div class="footer-section">
