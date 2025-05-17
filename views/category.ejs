@@ -5,35 +5,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= category %> | Product Category</title>
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/category.css">
+    <link rel="stylesheet" href="../static/css/header.css">
+    <link rel="stylesheet" href="../static/css/footer.css">
+    <link rel="stylesheet" href="../static/css/category.css">
 </head>
 
 <body>
-    <header id="headerbar">
         <header id="headerbar">
             <div class="title-bar">
               <div class="head-left">
-                <img src="assets/file.png" alt="logo" id="logo">
+                <img src="../static/assets/file.png" alt="logo" id="logo">
                 <h1 class="company-title lato-bold">Something Little Special</h1>
                 <input type="text" name="searchbar" id="searchbar" placeholder="Search...">
               </div>
               <div class="head-right">
-                <button class="icon-button" onclick="window.location.href='h'"><img src="assets/wishlist.png" alt=""
+                <button class="icon-button" onclick="window.location.href='h'"><img src="../static/assets/wishlist-white.png" alt=""
                     class="large-icon" title="View Wishlist"></button>
-                <button class="icon-button" onclick="window.location.href='h'"><img src="assets/shopping-cart.png" alt=""
+                <button class="icon-button" onclick="window.location.href='h'"><img src="../static/assets/shopping-cart-white.png" alt=""
                     class="large-icon" title="View Cart"></button>
           
                 <% if (isAuthenticated) { %>
                   <!-- Header after login -->
                   <div class="acc-dropdown">
-                    <button class="icon-button"><img src="assets/account.png" alt="" class="large-icon" onclick="window.location.href='/profile'"></button>
+                    <button class="icon-button"><img src="../static/assets/account-white.png" alt="" class="large-icon" onclick="window.location.href='/profile'"></button>
                   </div>            
                 <% } else { %>
                   <!-- Header before login -->
                   <div class="acc-dropdown">
-                        <button class="icon-button"><img src="assets/account.png" alt="" class="large-icon"></button>
+                        <button class="icon-button"><img src="../static/assets/account-white.png" alt="" class="large-icon"></button>
                         <div class="acc-dropdown-content">
                             <button onclick="document.getElementById('cloginform').style.display='block'">Customer</button>
                         </div>
@@ -66,63 +65,74 @@
 
     <div class="empty-bar"></div>
 
-    <div class="container">
-        <div class="filters-sidebar">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <div class="sort-options">
-                Sort by:
-                <div class="sort-options-buttons">
-                    <button>Popularity</button>
-                    <button>Price: Low to High</button>
-                    <button>Price: High to Low</button>
-                    <button>Latest</button>
-                    <button>Oldest</button>
+    <div class="mobile-searchbox">
+        <input type="text" name="mobile-searchbar" id="mobile-searchbar" placeholder="Search...">
+    </div>
+
+    <div id="filter-sidebar" class="hidden-sidebar lato">
+        <form action="">
+            <div class="filter-options">
+                <div class="sort-dropdown">
+                    <button id="sort-button" type="button">Sort by : Default (Popularity)</button>
+                    <div class="sort-dropdown-content hide-sort-dropdown">
+                        <button type="button" class="sort-option">Popularity</button>
+                        <button type="button" class="sort-option">Price High to Low</button>
+                        <button type="button" class="sort-option">Price Low to High</button>
+                        <button type="button" class="sort-option">Latest</button>
+                    </div>
                 </div>
-            </div>
-            <div class="price-filters">
-                <div class="min-price-filters">
-                    <label for="minPrice">Min Price</label>
-                    <input type="number" id="minPrice">
+                <div class="price-filters">
+                    <div class="min-price-filters">
+                        <label for="min-price-field">Min Price</label>
+                        <input type="number" name="" id="min-price-field">
+                    </div>
+                    <div class="max-price-filters">
+                        <label for="max-price-field">Max Price</label>
+                        <input type="number" name="" id="max-price-field">
+                    </div>
                 </div>
-                <div class="max-price-filters">
-                    <label for="maxPrice">Max Price</label>
-                    <input type="number" id="maxPrice">
+                <div class="customization-filters">
+                    Cusotmizable?
+                    <div class="customization-options">
+                        <label><input type="checkbox" name="customizability-filters" class="single-checkbox"
+                                value="custom-yes"> Yes</label>
+                        <label><input type="checkbox" name="customizability-filters" class="single-checkbox"
+                                value="custom-no"> No</label>
+                    </div>
                 </div>
-            </div>
-            <div class="customization-filters">
-                Customizable?
-                <div class="customization-options">
-                    <label><input type="checkbox" name="customizability-filters" class="single-checkbox" value="custom-yes"> Yes</label>
-                    <label><input type="checkbox" name="customizability-filters" class="single-checkbox" value="custom-no"> No</label>
+                
+                <div class="material-filters">
+                    Material:
+                    <div class="material-options">
+                        <label><input type="checkbox" name="material-filters" value="material-wood">Wood</label>
+                        <label><input type="checkbox" name="material-filters" value="material-resin">Resin</label>
+                        <label><input type="checkbox" name="material-filters" value="material-glass">Glass</label>
+                        <label><input type="checkbox" name="material-filters" value="material-acrylic">Acrylic</label>
+                        <label><input type="checkbox" name="material-filters" value="material-others">Others</label>
+                    </div>
+                </div>
+                
+                <div class="rating-filters">
+                    Filter by ratings:
+                    <div class="rating-options">
+                        <label><input type="checkbox" name="rating-filters" value="rating-three-star">3 stars and
+                            above</label>
+                        <label><input type="checkbox" name="rating-filters" value="rating-four-star">4 stars and
+                            above</label>
+                        <label><input type="checkbox" name="rating-filters" value="rating-five-star">5 stars</label>
+                    </div>
                 </div>
             </div>
 
-            <div class="rating-filters">
-                Filter by ratings:
-                <div class="rating-options">
-                    <label><input type="checkbox" name="rating-filters" value="rating-three-star">3 stars and above</label>
-                    <label><input type="checkbox" name="rating-filters" value="rating-four-star">4 stars and above</label>
-                    <label><input type="checkbox" name="rating-filters" value="rating-five-star">5 stars</label>
-                </div>
+            <div class="filter-manage-buttons">
+                <button type="submit" id="apply-filters-btn">Apply Filters</button>
+                <button type="reset" id="reset-filters-btn">Clear Filters</button>
             </div>
+        </form>
+    </div>
 
-            <div class="material-filters">
-                Material:
-                <div class="material-options">
-                    <label><input type="checkbox" name="material-filters" value="material-wood">Wood</label>
-                    <label><input type="checkbox" name="material-filters" value="material-resin">Resin</label>
-                    <label><input type="checkbox" name="material-filters" value="material-glass">Glass</label>
-                    <label><input type="checkbox" name="material-filters" value="material-acrylic">Acrylic</label>
-                    <label><input type="checkbox" name="material-filters" value="material-others">Others</label>
-                </div>
-            </div>
-
-            <div class="filter-buttons">
-                <button type="reset">Clear Filters</button>
-                <button type="submit">Apply Filters</button>
-            </div>
-        </div>
-
+    <div class="container full-container lato">
+    <button type="button" id="sidebar-button">Filters</button>
         <!-- Product display part -->
         <div class="product-box">
             <h2><%= category %></h2>
@@ -134,7 +144,7 @@
                         <div class="product-images">
                             <img src="<%= product.coverImage %>" alt="<%= product.name %>" width="250px" height="250px">
                             <div class="fav-icon-div">
-                                <img src="/assets/favourite.png" alt="Favorite">
+                                <button><img src="../static/assets/favourite.png" alt=""></button>
                             </div>
                         </div>
                         <div class="product-info">
@@ -148,9 +158,9 @@
                                 </div>
                                 <div class="product-customization-row">
                                     <% if (product.isCustomizable) { %>
-                                        <span class="custom-icon-box">
-                                            <img src="/assets/customize-icon.png" alt="Customizable" width="16px">
-                                        </span>
+                                        <div class="custom-icon-box">
+                                            <img src="../static/assets/customize-icon.png" alt="Customizable" width="16px">
+                                        </div>
                                         <span class="customize-info"><em>Customizable</em></span>
                                     <% } %>
                                 </div>
@@ -230,21 +240,79 @@
     //     const sortOptions = document.getElementsByClassName("sort-options-buttons")[0];  // Access the first element
     //     sortOptions.classList.toggle("show");
     // }
+
+
+    // --------------------------------- Function to Open Sidebar Start ----------------------------------------------
+    
+    // For Sort By Dropdown
+
+        let sortButton = document.querySelector("#sort-button");
+        let sortMenu = document.querySelector(".sort-dropdown-content");
+
+        let a = sortMenu.classList;
+        // console.log(a);
+        sortButton.addEventListener("click", ()=> {
+            sortMenu.classList.toggle("hide-sort-dropdown")
+            sortMenu.classList.toggle("show-sort-dropdown")
+        });
+
+        document.addEventListener("click", (event) => {
+            if(!sortButton.contains(event.target) && !sortMenu.contains(event.target)) {
+                sortMenu.classList.add("hide-sort-dropdown")
+                sortMenu.classList.remove("show-sort-dropdown")
+            }
+        });
+
+        let sortOptionArr = document.querySelectorAll(".sort-option");
+        sortOptionArr.forEach(element => {
+            element.addEventListener("click", ()=> {
+                optionSelected = element.textContent;
+                sortButton.textContent = "Sort by : " + optionSelected;
+                sortMenu.classList.add("hide-sort-dropdown")
+                sortMenu.classList.remove("show-sort-dropdown")
+            })    
+        });
+
+
+
+    // For Sidebar
+
+        let sidebarButton = document.getElementById("sidebar-button");
+        let sidebarSection = document.getElementById("filter-sidebar");
+        let productSection = document.querySelector(".container");
+        let body = document.body;
+
+        sidebarButton.addEventListener("click", () => {
+        let isOpening = sidebarSection.classList.contains("hidden-sidebar");
+
+        sidebarSection.classList.toggle("hidden-sidebar");
+        sidebarSection.classList.toggle("visible-sidebar");
+        productSection.classList.toggle("full-container");
+        productSection.classList.toggle("partial-container");
+
+        // Disable scrolling when sidebar is open
+            if (isOpening) {
+                body.classList.add("no-scroll");
+            } else {
+                body.classList.remove("no-scroll");
+            }
+        });
+
+        document.addEventListener("click", (event) => {
+            if (!sidebarButton.contains(event.target) && !sidebarSection.contains(event.target)) {
+                sidebarSection.classList.add("hidden-sidebar");
+                sidebarSection.classList.remove("visible-sidebar");
+                productSection.classList.add("full-container");
+                productSection.classList.remove("partial-container");
+                
+                // Re-enable scrolling when sidebar is closed
+                body.classList.remove("no-scroll");
+            }
+        });
+
+    
+    // --------------------------------- Function to Open Sidebar End ----------------------------------------------
+
 </script>
 
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
